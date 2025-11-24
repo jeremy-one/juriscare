@@ -22,7 +22,7 @@ export default function Hero({ title, subtitle, buttons, backgroundImage }: Hero
             style={{ backgroundImage: `url(${backgroundImage})` }}
           />
         ) : (
-          <div className="absolute inset-0 bg-gradient-to-br from-[var(--primary)] to-[var(--primary-dark)]" />
+          <div className="absolute inset-0 bg-gradient-to-br from-primary to-primary-dark" />
         )}
         <div className="absolute inset-0 bg-black/40" />
       </div>

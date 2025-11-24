@@ -31,7 +31,7 @@ export default function FAQ({ items }: FAQProps) {
           >
             <span className="font-semibold text-lg text-gray-800">{item.question}</span>
             <svg
-              className={`w-6 h-6 text-[var(--primary)] transition-transform duration-300 ${
+              className={`w-6 h-6 text-primary transition-transform duration-300 ${
                 openIndex === index ? 'rotate-180' : ''
               }`}
               fill="none"

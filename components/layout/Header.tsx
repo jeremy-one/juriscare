@@ -24,18 +24,18 @@ export default function Header() {
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
-            <Link href="/" className="text-gray-700 hover:text-[var(--primary)] transition-colors font-medium">
+            <Link href="/" className="text-gray-700 hover:text-primary transition-colors font-medium">
               Accueil
             </Link>
-            <Link href="/mediateurs" className="text-gray-700 hover:text-[var(--primary)] transition-colors font-medium">
+            <Link href="/mediateurs" className="text-gray-700 hover:text-primary transition-colors font-medium">
               Médiateurs
             </Link>
-            <Link href="/mediation" className="text-gray-700 hover:text-[var(--primary)] transition-colors font-medium">
+            <Link href="/mediation" className="text-gray-700 hover:text-primary transition-colors font-medium">
               Médiation
             </Link>
             <Link
               href="/contact"
-              className="bg-[var(--primary)] text-white px-6 py-2.5 rounded-full hover:bg-[var(--primary-dark)] transition-all shadow-md hover:shadow-lg"
+              className="bg-primary text-white px-6 py-2.5 rounded-full hover:bg-primary-dark transition-all shadow-md hover:shadow-lg"
             >
               Contact
             </Link>
@@ -61,28 +61,28 @@ export default function Header() {
             <div className="flex flex-col space-y-4">
               <Link
                 href="/"
-                className="text-gray-700 hover:text-[var(--primary)] transition-colors font-medium"
+                className="text-gray-700 hover:text-primary transition-colors font-medium"
                 onClick={() => setIsMenuOpen(false)}
               >
                 Accueil
               </Link>
               <Link
                 href="/mediateurs"
-                className="text-gray-700 hover:text-[var(--primary)] transition-colors font-medium"
+                className="text-gray-700 hover:text-primary transition-colors font-medium"
                 onClick={() => setIsMenuOpen(false)}
               >
                 Médiateurs
               </Link>
               <Link
                 href="/mediation"
-                className="text-gray-700 hover:text-[var(--primary)] transition-colors font-medium"
+                className="text-gray-700 hover:text-primary transition-colors font-medium"
                 onClick={() => setIsMenuOpen(false)}
               >
                 Médiation
               </Link>
               <Link
                 href="/contact"
-                className="bg-[var(--primary)] text-white px-6 py-2.5 rounded-full hover:bg-[var(--primary-dark)] transition-all text-center"
+                className="bg-primary text-white px-6 py-2.5 rounded-full hover:bg-primary-dark transition-all text-center"
                 onClick={() => setIsMenuOpen(false)}
               >
                 Contact

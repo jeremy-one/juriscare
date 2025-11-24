@@ -102,11 +102,11 @@ export default function Mediation() {
 
           <div className="space-y-8">
             {/* Niveau 1 */}
-            <Card className="border-l-4 border-[var(--secondary)]">
+            <Card className="border-l-4 border-secondary">
               <div className="flex items-start justify-between flex-col lg:flex-row gap-6">
                 <div className="flex-1">
                   <div className="flex items-center mb-4">
-                    <span className="bg-[var(--secondary)] text-white px-3 py-1 rounded-full text-sm font-semibold mr-3">
+                    <span className="bg-secondary text-white px-3 py-1 rounded-full text-sm font-semibold mr-3">
                       Niveau 1
                     </span>
                     <h3 className="text-2xl font-bold text-gray-900">
@@ -118,15 +118,15 @@ export default function Mediation() {
                   </p>
                   <ul className="space-y-2 text-gray-600">
                     <li className="flex items-start">
-                      <span className="text-[var(--secondary)] mr-2">✓</span>
+                      <span className="text-secondary mr-2">✓</span>
                       Démarche dématérialisée
                     </li>
                     <li className="flex items-start">
-                      <span className="text-[var(--secondary)] mr-2">✓</span>
+                      <span className="text-secondary mr-2">✓</span>
                       Notification à la partie adverse
                     </li>
                     <li className="flex items-start">
-                      <span className="text-[var(--secondary)] mr-2">✓</span>
+                      <span className="text-secondary mr-2">✓</span>
                       Attestation émise à l&apos;issue de la réunion
                     </li>
                   </ul>
@@ -140,11 +140,11 @@ export default function Mediation() {
             </Card>
 
             {/* Niveau 2 */}
-            <Card className="border-l-4 border-[var(--primary)]">
+            <Card className="border-l-4 border-primary">
               <div className="flex items-start justify-between flex-col lg:flex-row gap-6">
                 <div className="flex-1">
                   <div className="flex items-center mb-4">
-                    <span className="bg-[var(--primary)] text-white px-3 py-1 rounded-full text-sm font-semibold mr-3">
+                    <span className="bg-primary text-white px-3 py-1 rounded-full text-sm font-semibold mr-3">
                       Niveau 2
                     </span>
                     <h3 className="text-2xl font-bold text-gray-900">
@@ -156,15 +156,15 @@ export default function Mediation() {
                   </p>
                   <ul className="space-y-2 text-gray-600">
                     <li className="flex items-start">
-                      <span className="text-[var(--primary)] mr-2">✓</span>
+                      <span className="text-primary mr-2">✓</span>
                       Diagnostic du conflit
                     </li>
                     <li className="flex items-start">
-                      <span className="text-[var(--primary)] mr-2">✓</span>
+                      <span className="text-primary mr-2">✓</span>
                       Médiateur désigné selon le type de dossier
                     </li>
                     <li className="flex items-start">
-                      <span className="text-[var(--primary)] mr-2">✓</span>
+                      <span className="text-primary mr-2">✓</span>
                       Cadre sécurisé, neutre, confidentiel
                     </li>
                   </ul>
@@ -178,11 +178,11 @@ export default function Mediation() {
             </Card>
 
             {/* Niveau 3 */}
-            <Card className="border-l-4 border-[var(--accent)]">
+            <Card className="border-l-4 border-accent">
               <div className="flex items-start justify-between flex-col lg:flex-row gap-6">
                 <div className="flex-1">
                   <div className="flex items-center mb-4">
-                    <span className="bg-[var(--accent)] text-white px-3 py-1 rounded-full text-sm font-semibold mr-3">
+                    <span className="bg-accent text-white px-3 py-1 rounded-full text-sm font-semibold mr-3">
                       Niveau 3
                     </span>
                     <h3 className="text-2xl font-bold text-gray-900">
@@ -194,15 +194,15 @@ export default function Mediation() {
                   </p>
                   <ul className="space-y-2 text-gray-600">
                     <li className="flex items-start">
-                      <span className="text-[var(--accent)] mr-2">✓</span>
+                      <span className="text-accent mr-2">✓</span>
                       Tiers facilitateur
                     </li>
                     <li className="flex items-start">
-                      <span className="text-[var(--accent)] mr-2">✓</span>
+                      <span className="text-accent mr-2">✓</span>
                       Structure des échanges
                     </li>
                     <li className="flex items-start">
-                      <span className="text-[var(--accent)] mr-2">✓</span>
+                      <span className="text-accent mr-2">✓</span>
                       Objectif : accord rapide, sans escalade
                     </li>
                   </ul>
@@ -278,7 +278,7 @@ export default function Mediation() {
           <p className="text-xl mb-8 opacity-90">
             Contactez-nous pour démarrer votre médiation et trouver une solution amiable
           </p>
-          <Button href="/contact" variant="outline" size="lg" className="border-white text-white hover:bg-white hover:text-[var(--primary)]">
+          <Button href="/contact" variant="outline" size="lg" className="border-white text-white hover:bg-white hover:text-primary">
             Démarrer maintenant
           </Button>
         </div>

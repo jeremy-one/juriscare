@@ -145,7 +145,7 @@ export default function Mediateurs() {
                   <a href="https://formation.side-quest.io/conditions-generales-d-utilisation-copie/"
                      target="_blank"
                      rel="noopener noreferrer"
-                     className="text-[var(--primary)] hover:underline">
+                     className="text-primary hover:underline">
                     Conditions générales d&apos;utilisation
                   </a>
                 </li>
@@ -153,7 +153,7 @@ export default function Mediateurs() {
                   <a href="https://formation.side-quest.io/cgv-copie/"
                      target="_blank"
                      rel="noopener noreferrer"
-                     className="text-[var(--primary)] hover:underline">
+                     className="text-primary hover:underline">
                     CGV
                   </a>
                 </li>
@@ -161,7 +161,7 @@ export default function Mediateurs() {
                   <a href="https://formation.side-quest.io/politique-de-confidentialite-copie/"
                      target="_blank"
                      rel="noopener noreferrer"
-                     className="text-[var(--primary)] hover:underline">
+                     className="text-primary hover:underline">
                     Politique de confidentialité
                   </a>
                 </li>
@@ -169,7 +169,7 @@ export default function Mediateurs() {
                   <a href="https://formation.side-quest.io/reglement-interieur-copie/"
                      target="_blank"
                      rel="noopener noreferrer"
-                     className="text-[var(--primary)] hover:underline">
+                     className="text-primary hover:underline">
                     Règlement intérieur
                   </a>
                 </li>
@@ -198,7 +198,7 @@ export default function Mediateurs() {
           <p className="text-xl mb-8 opacity-90">
             Contactez-nous pour échanger sur votre parcours et vos attentes
           </p>
-          <Button href="/contact" variant="outline" size="lg" className="border-white text-white hover:bg-white hover:text-[var(--primary)]">
+          <Button href="/contact" variant="outline" size="lg" className="border-white text-white hover:bg-white hover:text-primary">
             Nous contacter
           </Button>
         </div>

@@ -55,7 +55,7 @@ export default function Contact() {
                     required
                     value={formData.name}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[var(--primary)] focus:border-transparent outline-none transition"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition"
                     placeholder="Jean Dupont"
                   />
                 </div>
@@ -71,7 +71,7 @@ export default function Contact() {
                     required
                     value={formData.email}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[var(--primary)] focus:border-transparent outline-none transition"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition"
                     placeholder="jean.dupont@email.com"
                   />
                 </div>
@@ -86,7 +86,7 @@ export default function Contact() {
                     name="phone"
                     value={formData.phone}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[var(--primary)] focus:border-transparent outline-none transition"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition"
                     placeholder="06 12 34 56 78"
                   />
                 </div>
@@ -101,7 +101,7 @@ export default function Contact() {
                     required
                     value={formData.subject}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[var(--primary)] focus:border-transparent outline-none transition"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition"
                   >
                     <option value="mediation">Démarrer une médiation</option>
                     <option value="mediateur">Devenir médiateur</option>
@@ -121,7 +121,7 @@ export default function Contact() {
                     value={formData.message}
                     onChange={handleChange}
                     rows={6}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[var(--primary)] focus:border-transparent outline-none transition resize-none"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition resize-none"
                     placeholder="Décrivez-nous votre situation ou votre demande..."
                   />
                 </div>
@@ -134,40 +134,40 @@ export default function Contact() {
 
             {/* Informations de contact */}
             <div className="space-y-8">
-              <div className="bg-[var(--light)] rounded-xl p-6">
+              <div className="bg-light rounded-xl p-6">
                 <div className="flex items-start mb-4">
                   <div className="text-3xl mr-4">📧</div>
                   <div>
                     <h3 className="font-semibold text-lg text-gray-900 mb-2">Email</h3>
-                    <a href="mailto:contact@juriscare.fr" className="text-[var(--primary)] hover:underline">
+                    <a href="mailto:contact@juriscare.fr" className="text-primary hover:underline">
                       contact@juriscare.fr
                     </a>
                   </div>
                 </div>
               </div>
 
-              <div className="bg-[var(--light)] rounded-xl p-6">
+              <div className="bg-light rounded-xl p-6">
                 <div className="flex items-start mb-4">
                   <div className="text-3xl mr-4">📞</div>
                   <div>
                     <h3 className="font-semibold text-lg text-gray-900 mb-2">Téléphone</h3>
                     <p className="text-gray-700">Du lundi au vendredi</p>
                     <p className="text-gray-700">9h00 - 18h00</p>
-                    <a href="tel:+33123456789" className="text-[var(--primary)] hover:underline font-medium">
+                    <a href="tel:+33123456789" className="text-primary hover:underline font-medium">
                       01 23 45 67 89
                     </a>
                   </div>
                 </div>
               </div>
 
-              <div className="bg-[var(--primary)] text-white rounded-xl p-6">
+              <div className="bg-primary text-white rounded-xl p-6">
                 <h3 className="font-semibold text-xl mb-3">Vous préférez être rappelé ?</h3>
                 <p className="mb-4 opacity-90">
                   Indiquez-le dans votre message et nous vous contacterons aux horaires qui vous conviennent.
                 </p>
               </div>
 
-              <div className="bg-[var(--light)] rounded-xl p-6">
+              <div className="bg-light rounded-xl p-6">
                 <h3 className="font-semibold text-lg text-gray-900 mb-3">Réponse rapide</h3>
                 <p className="text-gray-700">
                   Nous nous engageons à vous répondre sous 24h ouvrées maximum.

@@ -97,7 +97,7 @@ export default function Home() {
           <p className="text-xl mb-12 opacity-90">
             Des professionnels expérimentés, certifiés et engagés dans une démarche de qualité avec Juriscare.
           </p>
-          <Button href="/mediateurs" variant="outline" size="lg" className="border-white text-white hover:bg-white hover:text-[var(--primary)]">
+          <Button href="/mediateurs" variant="outline" size="lg" className="border-white text-white hover:bg-white hover:text-primary">
             Rejoindre notre réseau
           </Button>
         </div>
