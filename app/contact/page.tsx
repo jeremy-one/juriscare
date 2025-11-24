@@ -11,7 +11,8 @@ export default function Contact() {
     email: '',
     phone: '',
     subject: 'mediation',
-    message: ''
+    message: '',
+    wantCallback: false
   });
 
   const handleSubmit = (e: React.FormEvent) => {
@@ -22,9 +23,12 @@ export default function Contact() {
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+    const { name, value, type } = e.target;
+    const checked = (e.target as HTMLInputElement).checked;
+
     setFormData({
       ...formData,
-      [e.target.name]: e.target.value
+      [name]: type === 'checkbox' ? checked : value
     });
   };
 
@@ -34,14 +38,9 @@ export default function Contact() {
         title="Contactez-nous"
         subtitle="Une question ? Un projet de médiation ? Nous sommes là pour vous accompagner."
         image="https://images.unsplash.com/photo-1556761175-b413da4baf72?q=80&w=2074&auto=format&fit=crop"
-        cards={[
-          { icon: 'scale', text: 'Démarrer une médiation', href: '#contact' },
-          { icon: 'users', text: 'Devenir médiateur', href: '/mediateurs' },
-          { icon: 'academic', text: 'Se former', href: '/mediateurs#formations' },
-        ]}
       />
 
-      <Section background="white" id="contact">
+      <Section id="contact" background="none" className="md:!pt-0 md:!pb-32 md:-mt-24 relative z-[999999]">
         <div className="max-w-6xl mx-auto">
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
@@ -96,6 +95,21 @@ export default function Contact() {
                 </div>
 
                 <div>
+                  <label className="flex items-center gap-3 cursor-pointer">
+                    <input
+                      type="checkbox"
+                      name="wantCallback"
+                      checked={formData.wantCallback}
+                      onChange={handleChange}
+                      className="w-5 h-5 text-primary border-gray-300 rounded focus:ring-2 focus:ring-primary cursor-pointer"
+                    />
+                    <span className="text-sm font-semibold text-gray-700">
+                      Je souhaite être rappelé(e)
+                    </span>
+                  </label>
+                </div>
+
+                <div>
                   <label htmlFor="subject" className="block text-sm font-semibold text-gray-700 mb-2">
                     Objet de votre demande *
                   </label>
@@ -116,17 +130,17 @@ export default function Contact() {
 
                 <div>
                   <label htmlFor="message" className="block text-sm font-semibold text-gray-700 mb-2">
-                    Message *
+                    Message {!formData.wantCallback && '*'}
                   </label>
                   <textarea
                     id="message"
                     name="message"
-                    required
+                    required={!formData.wantCallback}
                     value={formData.message}
                     onChange={handleChange}
                     rows={6}
                     className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition resize-none"
-                    placeholder="Décrivez-nous votre situation ou votre demande..."
+                    placeholder={formData.wantCallback ? "Message optionnel..." : "Décrivez-nous votre situation ou votre demande..."}
                   />
                 </div>
 
@@ -151,9 +165,9 @@ export default function Contact() {
               </div>
 
               <div className="bg-primary text-white rounded-2xl p-6">
-                <h3 className="font-serif font-semibold text-xl mb-3">Vous préférez être rappelé ?</h3>
+                <h3 className="font-serif font-semibold text-xl mb-3">Rappel téléphonique</h3>
                 <p className="mb-0 opacity-90">
-                  Indiquez-le dans votre message et nous vous contacterons aux horaires qui vous conviennent.
+                  Cochez la case correspondante dans le formulaire et nous vous contacterons rapidement. Le message devient alors facultatif.
                 </p>
               </div>
 

@@ -1,7 +1,7 @@
 interface SectionProps {
   children: React.ReactNode;
   className?: string;
-  background?: 'white' | 'light' | 'dark' | 'primary';
+  background?: 'white' | 'light' | 'dark' | 'primary' | 'none';
   id?: string;
 }
 
@@ -10,7 +10,8 @@ export default function Section({ children, className = '', background = 'white'
     white: 'bg-white',
     light: 'bg-light',
     dark: 'bg-dark text-white',
-    primary: 'bg-primary text-white'
+    primary: 'bg-primary text-white',
+    none: ''
   };
 
   return (

@@ -220,7 +220,7 @@ export default function MediateursPage() {
               </div>
 
               <div className="mb-8">
-                <a href="/catalogue-formations.pdf" target="_blank" rel="noopener noreferrer" className="inline-block font-medium rounded-full transition-all duration-300 text-center px-8 py-3 bg-primary text-white hover:bg-dark">
+                <a href="/Programme - 12 novembre 2025 -  médiation.pdf" target="_blank" rel="noopener noreferrer" className="inline-block font-medium rounded-full transition-all duration-300 text-center px-8 py-3 bg-primary text-white hover:bg-dark">
                   Découvrir le programme
                 </a>
               </div>
