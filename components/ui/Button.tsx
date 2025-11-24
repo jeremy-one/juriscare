@@ -20,9 +20,9 @@ export default function Button({
   const baseStyles = 'inline-block font-medium rounded-full transition-all duration-300 text-center';
 
   const variantStyles = {
-    primary: 'bg-primary text-white hover:bg-primary-dark shadow-md hover:shadow-lg',
-    secondary: 'bg-secondary text-white hover:bg-opacity-90 shadow-md hover:shadow-lg',
-    outline: 'border-2 border-primary text-primary hover:bg-primary hover:text-white'
+    primary: 'bg-primary text-white hover:bg-dark hover:text-white shadow-md hover:shadow-xl',
+    secondary: 'bg-secondary text-white hover:bg-dark hover:text-white shadow-md hover:shadow-xl',
+    outline: 'border-2 border-primary text-primary hover:bg-dark hover:border-dark hover:text-white'
   };
 
   const sizeStyles = {

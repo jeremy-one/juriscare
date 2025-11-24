@@ -14,8 +14,17 @@ module.exports = {
         },
         secondary: '#8b9a85',
         accent: '#b8a07e',
+        beige: {
+          DEFAULT: '#c4b5a0',
+          light: '#e5ddd0',
+          dark: '#a89985',
+        },
         dark: '#1a1a1a',
         light: '#f5f5f5',
+      },
+      fontFamily: {
+        sans: ['var(--font-inter)', 'system-ui', 'sans-serif'],
+        serif: ['var(--font-playfair)', 'Georgia', 'serif'],
       },
     },
   },

@@ -14,8 +14,8 @@ export default function Section({ children, className = '', background = 'white'
   };
 
   return (
-    <section id={id} className={`py-16 md:py-24 ${backgroundStyles[background]} ${className}`}>
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+    <section id={id} className={`py-20 md:py-32 ${backgroundStyles[background]} ${className}`}>
+      <div className="container mx-auto px-6 sm:px-8 lg:px-12">
         {children}
       </div>
     </section>

@@ -1,8 +1,12 @@
-import Hero from '@/components/sections/Hero';
+import HeroModern from '@/components/sections/HeroModern';
+import ImageTextSection from '@/components/sections/ImageTextSection';
 import Section from '@/components/ui/Section';
 import Card from '@/components/ui/Card';
 import Button from '@/components/ui/Button';
 import FAQ from '@/components/ui/FAQ';
+import ParallaxSVG from '@/components/ui/ParallaxSVG';
+import LinkedInFeed from '@/components/sections/LinkedInFeed';
+import { CheckCircleIcon, ScaleIcon, SparklesIcon } from '@heroicons/react/24/outline';
 
 export default function Home() {
   const faqItems = [
@@ -24,114 +28,245 @@ export default function Home() {
     }
   ];
 
+  const linkedInPosts = [
+    {
+      id: '1',
+      date: 'Il y a 2 jours',
+      content: '🎯 La médiation n\'est plus une option mais une obligation dans de nombreux litiges civils. Découvrez comment Juriscare accompagne les professionnels et les justiciables dans cette nouvelle ère de la résolution amiable.',
+      link: 'https://www.linkedin.com/company/juriscare',
+      likes: 45,
+      comments: 8
+    },
+    {
+      id: '2',
+      date: 'Il y a 1 semaine',
+      content: '📚 Formation à la médiation : notre prochain cycle démarre le mois prochain ! Au programme : gestion du stress, médiation judiciaire et conventionnelle, éthique des MARD. Inscriptions ouvertes.',
+      link: 'https://www.linkedin.com/company/juriscare',
+      likes: 67,
+      comments: 12
+    },
+    {
+      id: '3',
+      date: 'Il y a 2 semaines',
+      content: '💡 Saviez-vous qu\'une médiation réussie permet d\'économiser en moyenne 70% des coûts d\'une procédure judiciaire classique ? Sans compter le gain de temps et la préservation des relations. #Médiation #Justice',
+      link: 'https://www.linkedin.com/company/juriscare',
+      likes: 89,
+      comments: 15
+    }
+  ];
+
   return (
     <>
-      <Hero
+      <HeroModern
         title="Juriscare : au service de la médiation et de celles et ceux qui la font vivre"
         subtitle="Nous accompagnons les médiateurs, les entreprises et les justiciables dans une nouvelle ère de la résolution amiable."
-        buttons={[
-          { text: '🧑‍⚖️ Je suis médiateur', href: '/mediateurs', variant: 'primary' },
-          { text: '🧑🏻‍🎓 Je veux me former', href: '/mediateurs#formations', variant: 'secondary' },
-          { text: '👥 Je cherche un service de médiation', href: '/mediation', variant: 'outline' }
+        cards={[
+          { icon: 'scale', text: 'Je suis médiateur', href: '/mediateurs' },
+          { icon: 'academic', text: 'Je veux me former à l\'amiable', href: '/formations' },
+          { icon: 'users', text: 'Je cherche un service de médiation', href: '/mediation' },
         ]}
       />
 
       {/* Qui sommes-nous */}
-      <Section background="light">
-        <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-4xl font-bold mb-6 text-gray-900">Qui sommes-nous ?</h2>
-          <p className="text-lg text-gray-700 leading-relaxed">
+      <Section background="white">
+        <div className="max-w-5xl mx-auto text-center">
+          <h2 className="text-4xl sm:text-5xl font-serif font-normal text-gray-900 mb-8 leading-tight">
+            Qui sommes-nous ?
+          </h2>
+          <p className="text-xl text-gray-700 leading-relaxed">
             Juriscare est une plateforme au service de la médiation : nous donnons les moyens aux médiateurs d&apos;exercer leur mission avec sérénité, et aux justiciables de trouver des solutions amiables pour régler rapidement leurs différends.
           </p>
         </div>
       </Section>
 
-      {/* Pourquoi la médiation */}
-      <Section>
-        <div className="max-w-4xl mx-auto">
-          <h2 className="text-4xl font-bold mb-8 text-center text-gray-900">
-            Pourquoi la médiation est-elle devenue indispensable ?
-          </h2>
-          <p className="text-lg text-gray-700 leading-relaxed mb-8 text-center">
-            La médiation est devenue un passage obligatoire dans de nombreux litiges civils. Les tribunaux encouragent activement les parties à se tourner vers des solutions amiables et tous les mouvements législatifs vont dans ce sens pour donner plus d&apos;efficacité à la Justice Civile.
-          </p>
+      {/* Wrapper pour toutes les sections beiges avec SVG parallax */}
+      <div id="section-beige" className="relative">
+        <ParallaxSVG sectionId="section-beige" />
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12">
-            <Card>
-              <div className="text-center">
-                <div className="text-4xl mb-4">✓</div>
-                <h3 className="text-xl font-semibold mb-3 text-gray-900">Tentative obligatoire</h3>
-                <p className="text-gray-600">
-                  Tentative de médiation obligatoire avant d&apos;aller en justice
-                </p>
-              </div>
-            </Card>
+        {/* Section combinée : Pourquoi la médiation + Formations */}
+        <section className="bg-beige-light py-20 md:py-32">
+          <div className="container mx-auto px-6 sm:px-8 lg:px-12 relative z-10">
+          {/* Pourquoi la médiation */}
+          <div className="max-w-6xl mx-auto mb-32">
+            <div className="text-center mb-16">
+              <h2 className="text-4xl sm:text-5xl font-serif font-normal text-gray-900 mb-8 leading-tight">
+                Pourquoi la médiation<br />est-elle devenue indispensable ?
+              </h2>
+              <p className="text-xl text-gray-700 leading-relaxed max-w-3xl mx-auto">
+                La médiation est devenue un passage obligatoire dans de nombreux litiges civils. Les tribunaux encouragent activement les parties à se tourner vers des solutions amiables et tous les mouvements législatifs vont dans ce sens pour donner plus d&apos;efficacité à la Justice Civile.
+              </p>
+            </div>
 
-            <Card>
-              <div className="text-center">
-                <div className="text-4xl mb-4">⚖️</div>
-                <h3 className="text-xl font-semibold mb-3 text-gray-900">Sanctions en cas de refus</h3>
-                <p className="text-gray-600">
-                  Jusqu&apos;à 10 000 € d&apos;amende civile en cas de refus injustifié
-                </p>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              <div className="bg-white rounded-2xl shadow-md p-8">
+                <div className="text-center">
+                  <div className="w-16 h-16 bg-primary/10 rounded-2xl flex items-center justify-center mx-auto mb-6">
+                    <CheckCircleIcon className="w-10 h-10 text-primary" strokeWidth={0.75} />
+                  </div>
+                  <h3 className="text-xl font-serif font-semibold mb-4 text-gray-900">Tentative de médiation obligatoire</h3>
+                  <p className="text-gray-600 leading-relaxed">
+                    Avant d&apos;aller en justice, une tentative de médiation est désormais requise
+                  </p>
+                </div>
               </div>
-            </Card>
 
-            <Card>
-              <div className="text-center">
-                <div className="text-4xl mb-4">🤝</div>
-                <h3 className="text-xl font-semibold mb-3 text-gray-900">Bénéfices multiples</h3>
-                <p className="text-gray-600">
-                  Un gain de temps, d&apos;argent et de relation humaine
-                </p>
+              <div className="bg-white rounded-2xl shadow-md p-8">
+                <div className="text-center">
+                  <div className="w-16 h-16 bg-primary/10 rounded-2xl flex items-center justify-center mx-auto mb-6">
+                    <ScaleIcon className="w-10 h-10 text-primary" strokeWidth={0.75} />
+                  </div>
+                  <h3 className="text-xl font-serif font-semibold mb-4 text-gray-900">Sanctions en cas de refus</h3>
+                  <p className="text-gray-600 leading-relaxed">
+                    Jusqu&apos;à 10 000 € d&apos;amende civile en cas de refus injustifié
+                  </p>
+                </div>
               </div>
-            </Card>
+
+              <div className="bg-white rounded-2xl shadow-md p-8">
+                <div className="text-center">
+                  <div className="w-16 h-16 bg-primary/10 rounded-2xl flex items-center justify-center mx-auto mb-6">
+                    <SparklesIcon className="w-10 h-10 text-primary" strokeWidth={0.75} />
+                  </div>
+                  <h3 className="text-xl font-serif font-semibold mb-4 text-gray-900">Bénéfices multiples</h3>
+                  <p className="text-gray-600 leading-relaxed">
+                    Un gain de temps, d&apos;argent et de relations humaines
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Les formations */}
+          <div className="max-w-7xl mx-auto">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start">
+              {/* Colonne gauche - Titre et description */}
+              <div className="lg:sticky lg:top-32">
+                <h2 className="text-4xl sm:text-5xl font-serif font-normal text-gray-900 mb-6 leading-tight">
+                  Les formations de Juriscare
+                </h2>
+                <p className="text-lg text-gray-700 leading-relaxed mb-8">
+                  Une approche fondée sous l&apos;enseignement de professionnels experts (magistrats, avocats, médiateurs judiciaire et conventionnels, docteur en droit, professeur, universitaire et pros).
+                </p>
+                <Button href="/formations" variant="primary" size="lg">
+                  Découvrir nos formations
+                </Button>
+              </div>
+
+              {/* Colonne droite - Cards empilées */}
+              <div className="space-y-6">
+                <div className="bg-white rounded-2xl shadow-md p-8">
+                  <h3 className="text-xl font-serif font-semibold mb-4 text-gray-900">Gestion du stress</h3>
+                  <p className="text-gray-600 leading-relaxed">
+                    Techniques pour gérer les situations conflictuelles avec sérénité
+                  </p>
+                </div>
+
+                <div className="bg-white rounded-2xl shadow-md p-8">
+                  <h3 className="text-xl font-serif font-semibold mb-4 text-gray-900">Médiation judiciaire et conventionnelle</h3>
+                  <p className="text-gray-600 leading-relaxed">
+                    Maîtriser les enjeux de la médiation judiciaire et de la médiation conventionnelle
+                  </p>
+                </div>
+
+                <div className="bg-white rounded-2xl shadow-md p-8">
+                  <h3 className="text-xl font-serif font-semibold mb-4 text-gray-900">Éthique et mal des MARD</h3>
+                  <p className="text-gray-600 leading-relaxed">
+                    Comprendre le rôle des modes alternatifs de résolution des différends
+                  </p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
-      </Section>
+      </section>
 
-      {/* Nos médiateurs */}
-      <Section background="primary">
-        <div className="text-center max-w-4xl mx-auto">
-          <h2 className="text-4xl font-bold mb-6">Nos médiateurs</h2>
-          <p className="text-xl mb-12 opacity-90">
-            Des professionnels expérimentés, certifiés et engagés dans une démarche de qualité avec Juriscare.
-          </p>
-          <Button href="/mediateurs" variant="outline" size="lg" className="border-white text-white hover:bg-white hover:text-primary">
-            Rejoindre notre réseau
-          </Button>
-        </div>
-      </Section>
+      {/* Section Nos médiateurs */}
+      <section className="bg-beige-light py-20 md:py-32">
+        <div className="container mx-auto px-6 sm:px-8 lg:px-12 relative z-10">
+          <div className="max-w-6xl mx-auto">
+            <div className="text-center mb-16">
+              <h2 className="text-4xl sm:text-5xl font-serif font-normal text-gray-900 mb-8 leading-tight">
+                Nos médiateurs
+              </h2>
+              <p className="text-xl text-gray-700 leading-relaxed max-w-3xl mx-auto">
+                Des professionnels expérimentés, certifiés et engagés dans une démarche de qualité avec Juriscare.
+              </p>
+            </div>
 
-      {/* FAQ */}
-      <Section background="light">
-        <div className="max-w-4xl mx-auto">
-          <h2 className="text-4xl font-bold mb-12 text-center text-gray-900">
-            Questions fréquentes
-          </h2>
-          <FAQ items={faqItems} />
-        </div>
-      </Section>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              {/* Médiateur 1 */}
+              <div className="bg-white rounded-2xl p-8 shadow-md">
+                <div className="w-32 h-32 rounded-full bg-beige/30 mx-auto mb-6"></div>
+                <h3 className="text-2xl font-serif font-semibold mb-2 text-gray-900 text-center">Sophie Martin</h3>
+                <p className="text-primary text-sm mb-4 text-center">Droit commercial • Droit des affaires</p>
+                <p className="text-gray-600 italic text-center leading-relaxed">
+                  "La médiation permet de préserver les relations tout en trouvant des solutions durables."
+                </p>
+              </div>
 
-      {/* CTA Final */}
-      <Section>
-        <div className="text-center max-w-3xl mx-auto">
-          <h2 className="text-4xl font-bold mb-6 text-gray-900">
-            Prêt à démarrer votre médiation ?
-          </h2>
-          <p className="text-xl text-gray-700 mb-8">
-            Contactez-nous dès aujourd&apos;hui pour trouver une solution amiable à votre différend.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button href="/mediation" variant="primary" size="lg">
-              Démarrer une médiation
-            </Button>
-            <Button href="/contact" variant="outline" size="lg">
-              Nous contacter
-            </Button>
+              {/* Médiateur 2 */}
+              <div className="bg-white rounded-2xl p-8 shadow-md">
+                <div className="w-32 h-32 rounded-full bg-beige/30 mx-auto mb-6"></div>
+                <h3 className="text-2xl font-serif font-semibold mb-2 text-gray-900 text-center">Jean Dubois</h3>
+                <p className="text-primary text-sm mb-4 text-center">Droit de la famille • Succession</p>
+                <p className="text-gray-600 italic text-center leading-relaxed">
+                  "Écouter avant de juger, comprendre avant de décider."
+                </p>
+              </div>
+
+              {/* Médiateur 3 */}
+              <div className="bg-white rounded-2xl p-8 shadow-md">
+                <div className="w-32 h-32 rounded-full bg-beige/30 mx-auto mb-6"></div>
+                <h3 className="text-2xl font-serif font-semibold mb-2 text-gray-900 text-center">Marie Leroy</h3>
+                <p className="text-primary text-sm mb-4 text-center">Conflits de voisinage • Immobilier</p>
+                <p className="text-gray-600 italic text-center leading-relaxed">
+                  "La médiation transforme les conflits en opportunités de dialogue."
+                </p>
+              </div>
+            </div>
+
+            <div className="text-center mt-12">
+              <a href="/mediation" className="inline-block font-medium rounded-full transition-all duration-300 text-center px-8 py-4 text-lg bg-primary text-white hover:bg-dark hover:text-white shadow-lg hover:shadow-xl">
+                Découvrir nos services de médiation
+              </a>
+            </div>
           </div>
         </div>
-      </Section>
+      </section>
+    </div>
+
+      {/* Section FAQ - Layout gauche/droite */}
+      <section className="bg-white py-0 relative">
+        <div className="grid grid-cols-1 lg:grid-cols-2">
+          {/* Image à gauche - hauteur fixe */}
+          <div className="relative lg:order-1 h-[400px] lg:h-[900px]">
+            <img
+              src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?q=80&w=2070&auto=format&fit=crop"
+              alt="FAQ"
+              className="w-full h-full object-cover"
+            />
+          </div>
+
+          {/* Contenu FAQ à droite */}
+          <div className="lg:order-2 bg-white">
+            <div className="w-full px-8 sm:px-12 lg:px-16 py-16 lg:py-20">
+              <h2 className="text-4xl sm:text-5xl font-serif font-normal text-gray-900 mb-12 leading-tight">
+                Questions fréquentes
+              </h2>
+              <FAQ items={faqItems} />
+            </div>
+          </div>
+        </div>
+
+      </section>
+
+      {/* Section LinkedIn Feed */}
+      <LinkedInFeed posts={linkedInPosts} companyUrl="https://www.linkedin.com/company/juriscare" />
+
+      {/* Courbe de transition vers le footer */}
+      <div className="relative w-full bg-[#1a1a1a]">
+        <img src="/courbe-footer-beige.svg" alt="" className="w-full h-auto block" />
+      </div>
     </>
   );
 }

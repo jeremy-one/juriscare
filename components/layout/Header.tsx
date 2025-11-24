@@ -2,37 +2,58 @@
 
 import Link from 'next/link';
 import Image from 'next/image';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 50);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   return (
-    <header className="fixed top-0 w-full bg-white/95 backdrop-blur-sm shadow-sm z-50">
+    <header className={`fixed top-0 w-full z-50 transition-all duration-300 ${
+      isScrolled
+        ? 'bg-white shadow-md'
+        : 'bg-transparent'
+    }`}>
       <nav className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20">
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-2">
-            <div className="w-10 h-10 bg-primary rounded-lg flex items-center justify-center">
-              <span className="text-white font-bold text-xl">J</span>
-            </div>
-            <span className="text-2xl font-bold text-primary">JURISCARE</span>
+          <Link href="/" className="flex items-center">
+            <img
+              src="/juriscare.svg"
+              alt="Juriscare"
+              className="h-12 w-auto transition-all duration-300"
+            />
           </Link>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
-            <Link href="/" className="text-gray-700 hover:text-primary transition-colors font-medium">
+            <Link href="/" className={`hover:text-primary transition-colors font-medium ${
+              isScrolled ? 'text-gray-700' : 'text-white'
+            }`}>
               Accueil
             </Link>
-            <Link href="/mediateurs" className="text-gray-700 hover:text-primary transition-colors font-medium">
+            <Link href="/mediateurs" className={`hover:text-primary transition-colors font-medium ${
+              isScrolled ? 'text-gray-700' : 'text-white'
+            }`}>
               Médiateurs
             </Link>
-            <Link href="/mediation" className="text-gray-700 hover:text-primary transition-colors font-medium">
+            <Link href="/mediation" className={`hover:text-primary transition-colors font-medium ${
+              isScrolled ? 'text-gray-700' : 'text-white'
+            }`}>
               Médiation
             </Link>
             <Link
               href="/contact"
-              className="bg-primary text-white px-6 py-2.5 rounded-full hover:bg-primary-dark transition-all shadow-md hover:shadow-lg"
+              className="bg-primary text-white px-6 py-2.5 rounded-full hover:bg-dark hover:text-white transition-all shadow-md hover:shadow-xl"
             >
               Contact
             </Link>
@@ -45,9 +66,15 @@ export default function Header() {
             aria-label="Toggle menu"
           >
             <div className="w-6 h-5 flex flex-col justify-between">
-              <span className={`block h-0.5 w-full bg-gray-700 transition-all ${isMenuOpen ? 'rotate-45 translate-y-2' : ''}`}></span>
-              <span className={`block h-0.5 w-full bg-gray-700 transition-all ${isMenuOpen ? 'opacity-0' : ''}`}></span>
-              <span className={`block h-0.5 w-full bg-gray-700 transition-all ${isMenuOpen ? '-rotate-45 -translate-y-2' : ''}`}></span>
+              <span className={`block h-0.5 w-full transition-all ${
+                isScrolled ? 'bg-gray-700' : 'bg-white'
+              } ${isMenuOpen ? 'rotate-45 translate-y-2' : ''}`}></span>
+              <span className={`block h-0.5 w-full transition-all ${
+                isScrolled ? 'bg-gray-700' : 'bg-white'
+              } ${isMenuOpen ? 'opacity-0' : ''}`}></span>
+              <span className={`block h-0.5 w-full transition-all ${
+                isScrolled ? 'bg-gray-700' : 'bg-white'
+              } ${isMenuOpen ? '-rotate-45 -translate-y-2' : ''}`}></span>
             </div>
           </button>
         </div>
@@ -79,7 +106,7 @@ export default function Header() {
               </Link>
               <Link
                 href="/contact"
-                className="bg-primary text-white px-6 py-2.5 rounded-full hover:bg-primary-dark transition-all text-center"
+                className="bg-primary text-white px-6 py-2.5 rounded-full hover:bg-dark hover:text-white transition-all text-center shadow-md hover:shadow-xl"
                 onClick={() => setIsMenuOpen(false)}
               >
                 Contact

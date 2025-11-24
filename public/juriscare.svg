@@ -1,7 +1,9 @@
-<svg width="200" height="50" viewBox="0 0 200 50" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <text x="10" y="35" font-family="Arial, sans-serif" font-size="28" font-weight="700" fill="#3d5a6c">
-    JURISCARE
-  </text>
-  <circle cx="5" cy="25" r="3" fill="#8b9a85"/>
-  <rect x="0" y="40" width="200" height="2" fill="#3d5a6c" opacity="0.3"/>
+<svg xmlns="http://www.w3.org/2000/svg" width="264" height="70" viewBox="0 0 264 70">
+  <g id="Logo_V2" data-name="Logo V2" transform="translate(20402.371 -5954.945)">
+    <rect id="fond" width="184" height="63" transform="translate(-20322.371 5961.89)" fill="#365a70"/>
+    <rect id="fond-2" data-name="fond" width="80" height="70" transform="translate(-20402.371 5954.945)" fill="#222"/>
+    <path id="Ellipse_5_copie_2" data-name="Ellipse 5 copie 2" d="M55.141,84.927c-9.13,0-16.587,6.779-16.587,16.272,0,9.536,7.458,16.271,16.588,16.271,9.176,0,16.633-6.735,16.633-16.271C71.775,91.707,64.317,84.927,55.141,84.927Zm0,31.774c-7.005,0-13.469-5.7-13.469-15.5,0-9.764,6.463-15.459,13.469-15.459s13.47,5.7,13.47,15.459C68.611,111.006,62.147,116.7,55.141,116.7Zm6.3-7.84a9.638,9.638,0,0,1-12.753,0ZM55.353,93.745,50.237,107.7H48.959l6.394-17.442,6.4,17.441H60.471Zm-.307-17.208a2.557,2.557,0,1,1-2.557,2.557,2.557,2.557,0,0,1,2.557-2.557Zm0,43.9A2.557,2.557,0,1,1,52.49,123,2.557,2.557,0,0,1,55.047,120.44Zm24.508-19.394A2.557,2.557,0,1,1,77,98.491a2.557,2.557,0,0,1,2.556,2.556Zm-43.9,0A2.557,2.557,0,1,1,33.1,98.491a2.557,2.557,0,0,1,2.556,2.556Z" transform="translate(-20415.354 5888.941)" fill="#fff" fill-rule="evenodd"/>
+    <rect id="fond-3" data-name="fond" width="184" height="7" transform="translate(-20322.371 5954.945)" fill="#222"/>
+    <text id="Juriscare" transform="translate(-20293.371 5998.89)" fill="#fff" font-size="25" font-family="PlayfairDisplay-Regular, Playfair Display"><tspan x="0" y="0">JURISCARE</tspan></text>
+  </g>
 </svg>
