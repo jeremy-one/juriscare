@@ -1,12 +1,7 @@
-<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
-<html><head>
-<title>401 Unauthorized</title>
-</head><body>
-<h1>Unauthorized</h1>
-<p>This server could not verify that you
-are authorized to access the document
-requested.  Either you supplied the wrong
-credentials (e.g., bad password), or your
-browser doesn't understand how to supply
-the credentials required.</p>
-</body></html>
+<svg width="200" height="50" viewBox="0 0 200 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <text x="10" y="35" font-family="Arial, sans-serif" font-size="28" font-weight="700" fill="#3d5a6c">
+    JURISCARE
+  </text>
+  <circle cx="5" cy="25" r="3" fill="#8b9a85"/>
+  <rect x="0" y="40" width="200" height="2" fill="#3d5a6c" opacity="0.3"/>
+</svg>

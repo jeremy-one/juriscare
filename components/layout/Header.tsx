@@ -12,14 +12,11 @@ export default function Header() {
       <nav className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20">
           {/* Logo */}
-          <Link href="/" className="flex items-center">
-            <Image
-              src="/juriscare.svg"
-              alt="Juriscare"
-              width={160}
-              height={40}
-              className="h-8 w-auto"
-            />
+          <Link href="/" className="flex items-center gap-2">
+            <div className="w-10 h-10 bg-primary rounded-lg flex items-center justify-center">
+              <span className="text-white font-bold text-xl">J</span>
+            </div>
+            <span className="text-2xl font-bold text-primary">JURISCARE</span>
           </Link>
 
           {/* Desktop Navigation */}

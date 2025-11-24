@@ -8,13 +8,12 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Logo et description */}
           <div className="col-span-1 md:col-span-2">
-            <Image
-              src="/juriscare.svg"
-              alt="Juriscare"
-              width={160}
-              height={40}
-              className="h-8 w-auto mb-4 brightness-0 invert"
-            />
+            <div className="flex items-center gap-2 mb-4">
+              <div className="w-10 h-10 bg-white rounded-lg flex items-center justify-center">
+                <span className="text-primary font-bold text-xl">J</span>
+              </div>
+              <span className="text-2xl font-bold text-white">JURISCARE</span>
+            </div>
             <p className="text-gray-400 text-sm leading-relaxed max-w-md">
               Plateforme au service de la médiation : nous donnons les moyens aux médiateurs d&apos;exercer leur mission avec sérénité.
             </p>
