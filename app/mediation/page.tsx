@@ -28,6 +28,7 @@ export default function MediationPage() {
       <HeroModern
         title="Réglez rapidement vos litiges de manière sécurisée avec un accompagnement professionnel de qualité"
         subtitle="Juriscare vous propose plusieurs niveaux de service selon votre situation. Simple, rapide, conforme au droit."
+        image="https://images.unsplash.com/photo-1521791136064-7986c2920216?q=80&w=2069&auto=format&fit=crop"
         cards={[
           { icon: 'scale', text: 'Démarrer une médiation', href: '#contact' },
           { icon: 'document', text: 'En savoir plus', href: '#pourquoi' },

@@ -35,6 +35,7 @@ export default function MediateursPage() {
       <HeroModern
         title="Rejoignez un réseau de médiateurs engagés et accompagnés"
         subtitle="Juriscare vous aide à exercer votre métier dans les meilleures conditions : qualité, liberté, impact."
+        image="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?q=80&w=2070&auto=format&fit=crop"
         cards={[
           { icon: 'scale', text: 'Rejoindre Juriscare', href: '/contact' },
           { icon: 'academic', text: 'Découvrir nos formations', href: '#formations' },

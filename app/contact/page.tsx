@@ -33,6 +33,7 @@ export default function Contact() {
       <HeroModern
         title="Contactez-nous"
         subtitle="Une question ? Un projet de médiation ? Nous sommes là pour vous accompagner."
+        image="https://images.unsplash.com/photo-1556761175-b413da4baf72?q=80&w=2074&auto=format&fit=crop"
         cards={[
           { icon: 'scale', text: 'Démarrer une médiation', href: '#contact' },
           { icon: 'users', text: 'Devenir médiateur', href: '/mediateurs' },
