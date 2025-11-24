@@ -1,12 +1,12 @@
 'use client';
 
-import { ScaleIcon, AcademicCapIcon, UsersIcon } from '@heroicons/react/24/outline';
+import { ScaleIcon, AcademicCapIcon, UsersIcon, DocumentTextIcon } from '@heroicons/react/24/outline';
 
 interface HeroModernProps {
   title: string;
   subtitle: string;
   cards?: Array<{
-    icon: 'scale' | 'academic' | 'users';
+    icon: 'scale' | 'academic' | 'users' | 'document';
     text: string;
     href: string;
   }>;
@@ -17,6 +17,7 @@ const iconMap = {
   scale: ScaleIcon,
   academic: AcademicCapIcon,
   users: UsersIcon,
+  document: DocumentTextIcon,
 };
 
 export default function HeroModern({ title, subtitle, cards, image }: HeroModernProps) {
