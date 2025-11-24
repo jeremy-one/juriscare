@@ -135,48 +135,6 @@ export default function Home() {
               </div>
             </div>
           </div>
-
-          {/* Les formations */}
-          <div className="max-w-7xl mx-auto">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start">
-              {/* Colonne gauche - Titre et description */}
-              <div className="lg:sticky lg:top-32">
-                <h2 className="text-4xl sm:text-5xl font-serif font-normal text-gray-900 mb-6 leading-tight">
-                  Les formations de Juriscare
-                </h2>
-                <p className="text-lg text-gray-700 leading-relaxed mb-8">
-                  Une approche fondée sous l&apos;enseignement de professionnels experts (magistrats, avocats, médiateurs judiciaire et conventionnels, docteur en droit, professeur, universitaire et pros).
-                </p>
-                <Button href="/formations" variant="primary" size="lg">
-                  Découvrir nos formations
-                </Button>
-              </div>
-
-              {/* Colonne droite - Cards empilées */}
-              <div className="space-y-6">
-                <div className="bg-white rounded-2xl shadow-md p-8">
-                  <h3 className="text-xl font-serif font-semibold mb-4 text-gray-900">Gestion du stress</h3>
-                  <p className="text-gray-600 leading-relaxed">
-                    Techniques pour gérer les situations conflictuelles avec sérénité
-                  </p>
-                </div>
-
-                <div className="bg-white rounded-2xl shadow-md p-8">
-                  <h3 className="text-xl font-serif font-semibold mb-4 text-gray-900">Médiation judiciaire et conventionnelle</h3>
-                  <p className="text-gray-600 leading-relaxed">
-                    Maîtriser les enjeux de la médiation judiciaire et de la médiation conventionnelle
-                  </p>
-                </div>
-
-                <div className="bg-white rounded-2xl shadow-md p-8">
-                  <h3 className="text-xl font-serif font-semibold mb-4 text-gray-900">Éthique et mal des MARD</h3>
-                  <p className="text-gray-600 leading-relaxed">
-                    Comprendre le rôle des modes alternatifs de résolution des différends
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
         </div>
       </section>
 
