@@ -55,19 +55,29 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="/cgv" className="text-gray-400 hover:text-white transition-colors">
+                <a href="https://formation.side-quest.io/conditions-generales-d-utilisation-copie/" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors">
+                  CGU
+                </a>
+              </li>
+              <li>
+                <a href="https://formation.side-quest.io/cgv-copie/" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors">
                   CGV
-                </Link>
+                </a>
               </li>
               <li>
-                <Link href="/politique-confidentialite" className="text-gray-400 hover:text-white transition-colors">
+                <a href="https://formation.side-quest.io/politique-de-confidentialite-copie/" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors">
                   Politique de confidentialité
-                </Link>
+                </a>
               </li>
               <li>
-                <Link href="/reglement-interieur" className="text-gray-400 hover:text-white transition-colors">
+                <a href="https://formation.side-quest.io/reglement-interieur-copie/" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors">
                   Règlement intérieur
-                </Link>
+                </a>
+              </li>
+              <li>
+                <a href="/2025 - Gérer le handicap - Guide à destination du public.pdf" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors">
+                  Guide PSH
+                </a>
               </li>
             </ul>
           </div>

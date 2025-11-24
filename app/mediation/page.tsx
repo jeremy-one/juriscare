@@ -45,7 +45,7 @@ export default function MediationPage() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div className="flex items-start gap-4">
+            <div className="bg-beige-light rounded-2xl p-6 flex items-start gap-4">
               <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center flex-shrink-0">
                 <ScaleIcon className="w-7 h-7 text-primary" strokeWidth={0.75} />
               </div>
@@ -57,7 +57,7 @@ export default function MediationPage() {
               </div>
             </div>
 
-            <div className="flex items-start gap-4">
+            <div className="bg-beige-light rounded-2xl p-6 flex items-start gap-4">
               <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center flex-shrink-0">
                 <ClockIcon className="w-7 h-7 text-primary" strokeWidth={0.75} />
               </div>
@@ -69,7 +69,7 @@ export default function MediationPage() {
               </div>
             </div>
 
-            <div className="flex items-start gap-4">
+            <div className="bg-beige-light rounded-2xl p-6 flex items-start gap-4">
               <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center flex-shrink-0">
                 <LockClosedIcon className="w-7 h-7 text-primary" strokeWidth={0.75} />
               </div>
@@ -81,7 +81,7 @@ export default function MediationPage() {
               </div>
             </div>
 
-            <div className="flex items-start gap-4">
+            <div className="bg-beige-light rounded-2xl p-6 flex items-start gap-4">
               <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center flex-shrink-0">
                 <UserIcon className="w-7 h-7 text-primary" strokeWidth={0.75} />
               </div>
