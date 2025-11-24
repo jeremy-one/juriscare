@@ -32,10 +32,6 @@ export default function ParallaxSVG({ sectionId }: { sectionId: string }) {
         src="/juriscare-mark-outline-gray.svg"
         alt=""
         className="w-[600px] h-[600px] opacity-100"
-        style={{
-          filter: 'brightness(0) invert(1)',
-          mixBlendMode: 'normal'
-        }}
       />
     </div>
   );

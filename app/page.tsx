@@ -6,6 +6,7 @@ import Button from '@/components/ui/Button';
 import FAQ from '@/components/ui/FAQ';
 import ParallaxSVG from '@/components/ui/ParallaxSVG';
 import LinkedInFeed from '@/components/sections/LinkedInFeed';
+import MediatorsCarousel from '@/components/ui/MediatorsCarousel';
 import { CheckCircleIcon, ScaleIcon, SparklesIcon } from '@heroicons/react/24/outline';
 
 export default function Home() {
@@ -25,6 +26,24 @@ export default function Home() {
     {
       question: "Combien de temps dure une médiation ?",
       answer: "La durée varie selon la complexité du dossier, mais une médiation dure généralement entre 1 et 3 sessions de 2 heures. C'est bien plus rapide qu'une procédure judiciaire classique qui peut durer plusieurs années."
+    }
+  ];
+
+  const mediators = [
+    {
+      name: 'Sophie Martin',
+      specialties: 'Droit commercial • Droit des affaires',
+      quote: '"La médiation permet de préserver les relations tout en trouvant des solutions durables."'
+    },
+    {
+      name: 'Jean Dubois',
+      specialties: 'Droit de la famille • Succession',
+      quote: '"Écouter avant de juger, comprendre avant de décider."'
+    },
+    {
+      name: 'Marie Leroy',
+      specialties: 'Conflits de voisinage • Immobilier',
+      quote: '"La médiation transforme les conflits en opportunités de dialogue."'
     }
   ];
 
@@ -84,10 +103,10 @@ export default function Home() {
         <ParallaxSVG sectionId="section-beige" />
 
         {/* Section combinée : Pourquoi la médiation + Formations */}
-        <section className="bg-beige-light py-20 md:py-32">
+        <section className="bg-white py-20 md:py-32">
           <div className="container mx-auto px-6 sm:px-8 lg:px-12 relative z-10">
           {/* Pourquoi la médiation */}
-          <div className="max-w-6xl mx-auto mb-32">
+          <div className="max-w-6xl mx-auto">
             <div className="text-center mb-16">
               <h2 className="text-4xl sm:text-5xl font-serif font-normal text-gray-900 mb-8 leading-tight">
                 Pourquoi la médiation<br />est-elle devenue indispensable ?
@@ -98,7 +117,7 @@ export default function Home() {
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              <div className="bg-white rounded-2xl shadow-md p-8">
+              <div className="bg-beige-light rounded-2xl p-8">
                 <div className="text-center">
                   <div className="w-16 h-16 bg-primary/10 rounded-2xl flex items-center justify-center mx-auto mb-6">
                     <CheckCircleIcon className="w-10 h-10 text-primary" strokeWidth={0.75} />
@@ -110,7 +129,7 @@ export default function Home() {
                 </div>
               </div>
 
-              <div className="bg-white rounded-2xl shadow-md p-8">
+              <div className="bg-beige-light rounded-2xl p-8">
                 <div className="text-center">
                   <div className="w-16 h-16 bg-primary/10 rounded-2xl flex items-center justify-center mx-auto mb-6">
                     <ScaleIcon className="w-10 h-10 text-primary" strokeWidth={0.75} />
@@ -122,7 +141,7 @@ export default function Home() {
                 </div>
               </div>
 
-              <div className="bg-white rounded-2xl shadow-md p-8">
+              <div className="bg-beige-light rounded-2xl p-8">
                 <div className="text-center">
                   <div className="w-16 h-16 bg-primary/10 rounded-2xl flex items-center justify-center mx-auto mb-6">
                     <SparklesIcon className="w-10 h-10 text-primary" strokeWidth={0.75} />
@@ -138,92 +157,53 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Section Nos médiateurs */}
-      <section className="bg-beige-light py-20 md:py-32">
-        <div className="container mx-auto px-6 sm:px-8 lg:px-12 relative z-10">
-          <div className="max-w-6xl mx-auto">
-            <div className="text-center mb-16">
+      {/* Section Nos médiateurs - Layout gauche/droite */}
+      <section className="bg-beige-light py-0 relative">
+        <div className="grid grid-cols-1 lg:grid-cols-2">
+          {/* Contenu à gauche */}
+          <div className="lg:order-1 bg-beige-light">
+            <div className="w-full px-8 sm:px-12 lg:px-16 py-16 lg:py-20 flex flex-col justify-center h-full">
               <h2 className="text-4xl sm:text-5xl font-serif font-normal text-gray-900 mb-8 leading-tight">
                 Nos médiateurs
               </h2>
-              <p className="text-xl text-gray-700 leading-relaxed max-w-3xl mx-auto">
+              <p className="text-xl text-gray-700 leading-relaxed mb-8">
                 Des professionnels expérimentés, certifiés et engagés dans une démarche de qualité avec Juriscare.
               </p>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              {/* Médiateur 1 */}
-              <div className="bg-white rounded-2xl p-8 shadow-md">
-                <div className="w-32 h-32 rounded-full bg-beige/30 mx-auto mb-6"></div>
-                <h3 className="text-2xl font-serif font-semibold mb-2 text-gray-900 text-center">Sophie Martin</h3>
-                <p className="text-primary text-sm mb-4 text-center">Droit commercial • Droit des affaires</p>
-                <p className="text-gray-600 italic text-center leading-relaxed">
-                  "La médiation permet de préserver les relations tout en trouvant des solutions durables."
-                </p>
-              </div>
-
-              {/* Médiateur 2 */}
-              <div className="bg-white rounded-2xl p-8 shadow-md">
-                <div className="w-32 h-32 rounded-full bg-beige/30 mx-auto mb-6"></div>
-                <h3 className="text-2xl font-serif font-semibold mb-2 text-gray-900 text-center">Jean Dubois</h3>
-                <p className="text-primary text-sm mb-4 text-center">Droit de la famille • Succession</p>
-                <p className="text-gray-600 italic text-center leading-relaxed">
-                  "Écouter avant de juger, comprendre avant de décider."
-                </p>
-              </div>
-
-              {/* Médiateur 3 */}
-              <div className="bg-white rounded-2xl p-8 shadow-md">
-                <div className="w-32 h-32 rounded-full bg-beige/30 mx-auto mb-6"></div>
-                <h3 className="text-2xl font-serif font-semibold mb-2 text-gray-900 text-center">Marie Leroy</h3>
-                <p className="text-primary text-sm mb-4 text-center">Conflits de voisinage • Immobilier</p>
-                <p className="text-gray-600 italic text-center leading-relaxed">
-                  "La médiation transforme les conflits en opportunités de dialogue."
-                </p>
+              <div>
+                <a href="/mediation" className="inline-block font-medium rounded-full transition-all duration-300 text-center px-8 py-4 text-lg bg-primary text-white hover:bg-dark hover:text-white">
+                  Découvrir nos services de médiation
+                </a>
               </div>
             </div>
+          </div>
 
-            <div className="text-center mt-12">
-              <a href="/mediation" className="inline-block font-medium rounded-full transition-all duration-300 text-center px-8 py-4 text-lg bg-primary text-white hover:bg-dark hover:text-white shadow-lg hover:shadow-xl">
-                Découvrir nos services de médiation
-              </a>
+          {/* Carousel + Image à droite - hauteur fixe */}
+          <div className="relative lg:order-2 h-[400px] lg:h-[700px]">
+            {/* Image de fond */}
+            <img
+              src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?q=80&w=2070&auto=format&fit=crop"
+              alt="Nos médiateurs"
+              className="absolute inset-0 w-full h-full object-cover"
+            />
+            {/* Overlay sombre pour meilleure lisibilité */}
+            <div className="absolute inset-0 bg-black/20"></div>
+            {/* Carousel positionné au centre */}
+            <div className="absolute inset-0 flex items-center justify-center p-8">
+              <div className="w-full max-w-md">
+                <MediatorsCarousel mediators={mediators} />
+              </div>
             </div>
           </div>
         </div>
       </section>
     </div>
 
-      {/* Section FAQ - Layout gauche/droite */}
-      <section className="bg-white py-0 relative">
-        <div className="grid grid-cols-1 lg:grid-cols-2">
-          {/* Image à gauche - hauteur fixe */}
-          <div className="relative lg:order-1 h-[400px] lg:h-[900px]">
-            <img
-              src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?q=80&w=2070&auto=format&fit=crop"
-              alt="FAQ"
-              className="w-full h-full object-cover"
-            />
-          </div>
-
-          {/* Contenu FAQ à droite */}
-          <div className="lg:order-2 bg-white">
-            <div className="w-full px-8 sm:px-12 lg:px-16 py-16 lg:py-20">
-              <h2 className="text-4xl sm:text-5xl font-serif font-normal text-gray-900 mb-12 leading-tight">
-                Questions fréquentes
-              </h2>
-              <FAQ items={faqItems} />
-            </div>
-          </div>
-        </div>
-
-      </section>
-
       {/* Section LinkedIn Feed */}
       <LinkedInFeed posts={linkedInPosts} companyUrl="https://www.linkedin.com/company/juriscare" />
 
       {/* Courbe de transition vers le footer */}
-      <div className="relative w-full bg-[#1a1a1a]">
-        <img src="/courbe-footer-beige.svg" alt="" className="w-full h-auto block" />
+      <div className="relative w-full">
+        <img src="/courbe-footer.svg" alt="" className="w-full h-auto block" />
       </div>
     </>
   );

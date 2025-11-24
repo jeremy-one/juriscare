@@ -18,7 +18,7 @@ interface LinkedInFeedProps {
 
 export default function LinkedInFeed({ posts, companyUrl = 'https://www.linkedin.com/company/juriscare' }: LinkedInFeedProps) {
   return (
-    <section className="bg-beige-light py-20 md:py-32">
+    <section className="bg-white py-20 md:py-32 relative z-[2]">
       <div className="container mx-auto px-6 sm:px-8 lg:px-12">
         <div className="max-w-6xl mx-auto">
           {/* Header */}
