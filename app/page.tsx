@@ -195,6 +195,13 @@ export default function Home() {
             </div>
           </div>
         </div>
+
+        {/* Logo centré entre les deux sections */}
+        <div className="hidden lg:block absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-10">
+          <div className="w-16 h-16 bg-dark rounded-full flex items-center justify-center shadow-xl border border-white">
+            <img src="/juriscare-mark-fill-white.svg" alt="Juriscare" className="w-8 h-8" />
+          </div>
+        </div>
       </section>
     </div>
 
