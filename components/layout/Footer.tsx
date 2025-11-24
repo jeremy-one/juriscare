@@ -50,11 +50,6 @@ export default function Footer() {
             <h3 className="font-semibold text-lg mb-4">Informations</h3>
             <ul className="space-y-2">
               <li>
-                <Link href="/mentions-legales" className="text-gray-400 hover:text-white transition-colors">
-                  Mentions légales
-                </Link>
-              </li>
-              <li>
                 <a href="https://formation.side-quest.io/conditions-generales-d-utilisation-copie/" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors">
                   CGU
                 </a>
