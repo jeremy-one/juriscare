@@ -3,11 +3,13 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { useState, useEffect } from 'react';
+import { usePathname } from 'next/navigation';
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [isNavHovered, setIsNavHovered] = useState(false);
+  const pathname = usePathname();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -43,7 +45,7 @@ export default function Header() {
               href="/"
               className={`hover:text-primary hover:underline transition-colors font-medium ${
                 shouldShowWhiteBg ? 'text-gray-700' : 'text-white'
-              }`}
+              } ${pathname === '/' ? 'underline text-primary' : ''}`}
               onMouseEnter={() => !isScrolled && setIsNavHovered(true)}
               onMouseLeave={() => setIsNavHovered(false)}
             >
@@ -53,7 +55,7 @@ export default function Header() {
               href="/mediateurs"
               className={`hover:text-primary hover:underline transition-colors font-medium ${
                 shouldShowWhiteBg ? 'text-gray-700' : 'text-white'
-              }`}
+              } ${pathname === '/mediateurs' ? 'underline text-primary' : ''}`}
               onMouseEnter={() => !isScrolled && setIsNavHovered(true)}
               onMouseLeave={() => setIsNavHovered(false)}
             >
@@ -63,7 +65,7 @@ export default function Header() {
               href="/mediation"
               className={`hover:text-primary hover:underline transition-colors font-medium ${
                 shouldShowWhiteBg ? 'text-gray-700' : 'text-white'
-              }`}
+              } ${pathname === '/mediation' ? 'underline text-primary' : ''}`}
               onMouseEnter={() => !isScrolled && setIsNavHovered(true)}
               onMouseLeave={() => setIsNavHovered(false)}
             >
@@ -103,21 +105,27 @@ export default function Header() {
             <div className="flex flex-col space-y-4">
               <Link
                 href="/"
-                className="text-gray-700 hover:text-primary transition-colors font-medium"
+                className={`text-gray-700 hover:text-primary transition-colors font-medium ${
+                  pathname === '/' ? 'text-primary font-semibold' : ''
+                }`}
                 onClick={() => setIsMenuOpen(false)}
               >
                 Accueil
               </Link>
               <Link
                 href="/mediateurs"
-                className="text-gray-700 hover:text-primary transition-colors font-medium"
+                className={`text-gray-700 hover:text-primary transition-colors font-medium ${
+                  pathname === '/mediateurs' ? 'text-primary font-semibold' : ''
+                }`}
                 onClick={() => setIsMenuOpen(false)}
               >
                 Médiateurs
               </Link>
               <Link
                 href="/mediation"
-                className="text-gray-700 hover:text-primary transition-colors font-medium"
+                className={`text-gray-700 hover:text-primary transition-colors font-medium ${
+                  pathname === '/mediation' ? 'text-primary font-semibold' : ''
+                }`}
                 onClick={() => setIsMenuOpen(false)}
               >
                 Médiation

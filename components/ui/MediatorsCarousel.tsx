@@ -60,7 +60,7 @@ export default function MediatorsCarousel({ mediators }: MediatorsCarouselProps)
               key={index}
               onClick={() => setCurrentIndex(index)}
               className={`w-2 h-2 rounded-full transition-all ${
-                index === currentIndex ? 'bg-primary w-6' : 'bg-gray-300'
+                index === currentIndex ? 'bg-primary w-6' : 'bg-white'
               }`}
               aria-label={`Aller au médiateur ${index + 1}`}
             />
