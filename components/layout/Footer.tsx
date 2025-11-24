@@ -23,22 +23,22 @@ export default function Footer() {
             <h3 className="font-semibold text-lg mb-4">Navigation</h3>
             <ul className="space-y-2">
               <li>
-                <Link href="/" className="text-gray-400 hover:text-white transition-colors">
+                <Link href="/" className="text-gray-400 hover:text-white hover:underline transition-colors">
                   Accueil
                 </Link>
               </li>
               <li>
-                <Link href="/mediateurs" className="text-gray-400 hover:text-white transition-colors">
+                <Link href="/mediateurs" className="text-gray-400 hover:text-white hover:underline transition-colors">
                   Médiateurs
                 </Link>
               </li>
               <li>
-                <Link href="/mediation" className="text-gray-400 hover:text-white transition-colors">
+                <Link href="/mediation" className="text-gray-400 hover:text-white hover:underline transition-colors">
                   Médiation
                 </Link>
               </li>
               <li>
-                <Link href="/contact" className="text-gray-400 hover:text-white transition-colors">
+                <Link href="/contact" className="text-gray-400 hover:text-white hover:underline transition-colors">
                   Contact
                 </Link>
               </li>
@@ -50,27 +50,27 @@ export default function Footer() {
             <h3 className="font-semibold text-lg mb-4">Informations</h3>
             <ul className="space-y-2">
               <li>
-                <a href="https://formation.side-quest.io/conditions-generales-d-utilisation-copie/" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors">
+                <a href="https://formation.side-quest.io/conditions-generales-d-utilisation-copie/" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white hover:underline transition-colors">
                   CGU
                 </a>
               </li>
               <li>
-                <a href="https://formation.side-quest.io/cgv-copie/" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors">
+                <a href="https://formation.side-quest.io/cgv-copie/" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white hover:underline transition-colors">
                   CGV
                 </a>
               </li>
               <li>
-                <a href="https://formation.side-quest.io/politique-de-confidentialite-copie/" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors">
+                <a href="https://formation.side-quest.io/politique-de-confidentialite-copie/" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white hover:underline transition-colors">
                   Politique de confidentialité
                 </a>
               </li>
               <li>
-                <a href="https://formation.side-quest.io/reglement-interieur-copie/" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors">
+                <a href="https://formation.side-quest.io/reglement-interieur-copie/" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white hover:underline transition-colors">
                   Règlement intérieur
                 </a>
               </li>
               <li>
-                <a href="/2025 - Gérer le handicap - Guide à destination du public.pdf" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors">
+                <a href="/2025 - Gérer le handicap - Guide à destination du public.pdf" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white hover:underline transition-colors">
                   Guide PSH
                 </a>
               </li>
