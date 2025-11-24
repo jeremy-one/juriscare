@@ -1,7 +1,10 @@
+'use client';
+
 import HeroModern from '@/components/sections/HeroModern';
 import Section from '@/components/ui/Section';
 import FAQ from '@/components/ui/FAQ';
 import { CheckCircleIcon, AcademicCapIcon, UserGroupIcon, ChartBarIcon } from '@heroicons/react/24/outline';
+import { useState } from 'react';
 
 export default function MediateursPage() {
   const faqItems = [
@@ -29,6 +32,65 @@ export default function MediateursPage() {
     "Médiation familiale et succession",
     "Médiation commerciale et B2B"
   ];
+
+  const [selectedCategory, setSelectedCategory] = useState('Toutes');
+  const [currentPage, setCurrentPage] = useState(1);
+  const formationsPerPage = 9;
+
+  const formations = [
+    // TECHNIQUES DE COMMUNICATION
+    { category: 'Techniques de Communication', title: 'Écoute active et reformulation', description: 'Maîtriser les techniques élémentaires de communication pour favoriser des échanges sereins et constructifs' },
+    { category: 'Techniques de Communication', title: 'Communication non violente', description: 'Mettre en place un cadre commun de discussion selon les principes de la communication non violente' },
+    { category: 'Techniques de Communication', title: 'Initiation à la programmation neurolinguistique', description: 'Les outils de la PNL pour améliorer son rapport à l\'autre' },
+
+    // TECHNIQUES DE NÉGOCIATION
+    { category: 'Techniques de Négociation', title: 'Négociation', description: 'Construire une stratégie de négociation' },
+    { category: 'Techniques de Négociation', title: 'Négociation raisonnée', description: 'Mettre en place un cadre commun de discussion selon les principes de la négociation raisonnée' },
+
+    // GESTION DE CONFLITS
+    { category: 'Gestion de Conflits', title: 'Panorama des MARD', description: 'Connaître les différends modes amiables et alternatifs de règlement des différends et savoir identifier le plus adapté à une situation donnée' },
+    { category: 'Gestion de Conflits', title: 'Processus collaboratif', description: 'Devenir praticien de droit collaboratif' },
+    { category: 'Gestion de Conflits', title: 'Procédure participative et procédure participative de mise en état et instruction conventionnelle', description: 'Maîtriser les procédures participatives dans leur ensemble' },
+    { category: 'Gestion de Conflits', title: 'Médiation judiciaire et médiation conventionnelle', description: 'Comprendre les spécificités et les enjeux de la médiation judiciaire et de la médiation conventionnelle' },
+
+    // ACCOMPAGNEMENT AU CHANGEMENT
+    { category: 'Accompagnement au Changement', title: 'Gestion de crise', description: 'Savoir identifier, accompagner et résoudre les situations de crise' },
+    { category: 'Accompagnement au Changement', title: 'Gestion du stress : Approche sophrologique du conflit', description: 'Maîtriser ses émotions pour négocier efficacement' },
+
+    // PRATIQUE PROFESSIONNELLE
+    { category: 'Pratique Professionnelle', title: 'Savoir prescrire et accompagner son client en médiation', description: 'Développer sa posture de conseil pour orienter et accompagner son client' },
+    { category: 'Pratique Professionnelle', title: 'Actualités des modes amiables en matière familiale', description: 'Actualiser ses connaissances pour pratiquer l\'amiable en matière familiale' },
+    { category: 'Pratique Professionnelle', title: 'Les écrits en médiation', description: 'Entrée en médiation, déroulement, fin du processus, règles relatives aux écrits' },
+    { category: 'Pratique Professionnelle', title: 'Arbitrage en matière familiale', description: 'Domaines arbitrables et pratique de l\'arbitrage familial' },
+    { category: 'Pratique Professionnelle', title: 'Médiation inter-entreprises', description: 'Comprendre les spécificités et les enjeux de la médiation inter entreprise' },
+    { category: 'Pratique Professionnelle', title: 'Médiation intra entreprise', description: 'Comprendre l\'équilibre des relations en entreprise et apprendre à utiliser la médiation pour anticiper et gérer les conflits' },
+    { category: 'Pratique Professionnelle', title: 'Médiation en matière fiscale', description: 'Gérer les différends fiscaux par la médiation' },
+    { category: 'Pratique Professionnelle', title: 'Médiation de la consommation', description: 'Traiter les différends entre consommateurs et professionnels' },
+    { category: 'Pratique Professionnelle', title: 'Médiation familiale internationale', description: 'Gérer les conflits familiaux transfrontaliers' },
+    { category: 'Pratique Professionnelle', title: 'Médiation et copropriété', description: 'Résoudre les conflits en copropriété' },
+    { category: 'Pratique Professionnelle', title: 'Médiation dans l\'économie sociale et solidaire et dans les ONG', description: 'Adapter la médiation aux structures de l\'ESS' },
+    { category: 'Pratique Professionnelle', title: 'Psychologie de l\'individu en conflit', description: 'Comprendre les transformations induites par le conflit chez l\'individu et y réagir en médiateur' },
+    { category: 'Pratique Professionnelle', title: 'Enjeux et risques psycho-sociaux', description: 'Identifier et gérer les risques psychosociaux' },
+    { category: 'Pratique Professionnelle', title: 'Médiation et santé', description: 'Médier les conflits dans le secteur de la santé' }
+  ];
+
+  const categories = ['Toutes', 'Techniques de Communication', 'Techniques de Négociation', 'Gestion de Conflits', 'Accompagnement au Changement', 'Pratique Professionnelle'];
+
+  const filteredFormations = selectedCategory === 'Toutes'
+    ? formations
+    : formations.filter(f => f.category === selectedCategory);
+
+  // Réinitialiser la page à 1 quand on change de catégorie
+  const handleCategoryChange = (category: string) => {
+    setSelectedCategory(category);
+    setCurrentPage(1);
+  };
+
+  // Calcul de la pagination
+  const totalPages = Math.ceil(filteredFormations.length / formationsPerPage);
+  const indexOfLastFormation = currentPage * formationsPerPage;
+  const indexOfFirstFormation = indexOfLastFormation - formationsPerPage;
+  const currentFormations = filteredFormations.slice(indexOfFirstFormation, indexOfLastFormation);
 
   return (
     <>
@@ -158,7 +220,7 @@ export default function MediateursPage() {
               </div>
 
               <div className="mb-8">
-                <a href="/formations" className="inline-block font-medium rounded-full transition-all duration-300 text-center px-8 py-3 bg-primary text-white hover:bg-dark">
+                <a href="/catalogue-formations.pdf" target="_blank" rel="noopener noreferrer" className="inline-block font-medium rounded-full transition-all duration-300 text-center px-8 py-3 bg-primary text-white hover:bg-dark">
                   Découvrir le programme
                 </a>
               </div>
@@ -200,6 +262,110 @@ export default function MediateursPage() {
           </div>
         </div>
       </section>
+
+      {/* Catalogue de formations */}
+      <Section background="white" id="catalogue">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl sm:text-5xl font-serif font-normal text-gray-900 mb-8 leading-tight">
+              Catalogue de formations
+            </h2>
+          </div>
+
+          {/* Filtres */}
+          <div className="flex flex-wrap justify-center gap-3 mb-12">
+            {categories.map((category) => (
+              <button
+                key={category}
+                onClick={() => handleCategoryChange(category)}
+                className={`px-6 py-3 rounded-full font-medium transition-all duration-300 ${
+                  selectedCategory === category
+                    ? 'bg-primary text-white shadow-lg'
+                    : 'bg-beige-light text-gray-700 hover:bg-beige hover:shadow-md'
+                }`}
+              >
+                {category}
+              </button>
+            ))}
+          </div>
+
+          {/* Nombre de formations affichées */}
+          <div className="text-center mb-8">
+            <p className="text-gray-600">
+              {filteredFormations.length} formation{filteredFormations.length > 1 ? 's' : ''} disponible{filteredFormations.length > 1 ? 's' : ''}
+              {totalPages > 1 && ` • Page ${currentPage} sur ${totalPages}`}
+            </p>
+          </div>
+
+          {/* Grid de formations */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+            {currentFormations.map((formation, index) => (
+              <div key={index} className="bg-beige-light rounded-2xl p-6 transition-all duration-300 hover:shadow-lg">
+                <div className="mb-3">
+                  <span className="inline-block px-3 py-1 bg-primary/10 text-primary text-xs font-semibold rounded-full">
+                    {formation.category}
+                  </span>
+                </div>
+                <h4 className="text-lg font-serif font-semibold text-gray-900 mb-3">
+                  {formation.title}
+                </h4>
+                <p className="text-gray-600 text-sm leading-relaxed">
+                  {formation.description}
+                </p>
+              </div>
+            ))}
+          </div>
+
+          {/* Pagination */}
+          {totalPages > 1 && (
+            <div className="flex justify-center items-center gap-2 mb-12">
+              <button
+                onClick={() => setCurrentPage(prev => Math.max(prev - 1, 1))}
+                disabled={currentPage === 1}
+                className={`w-10 h-10 rounded-full flex items-center justify-center transition-all ${
+                  currentPage === 1
+                    ? 'bg-gray-200 text-gray-400 cursor-not-allowed'
+                    : 'bg-beige-light text-gray-700 hover:bg-primary hover:text-white'
+                }`}
+              >
+                ←
+              </button>
+
+              {Array.from({ length: totalPages }, (_, i) => i + 1).map((page) => (
+                <button
+                  key={page}
+                  onClick={() => setCurrentPage(page)}
+                  className={`w-10 h-10 rounded-full flex items-center justify-center font-medium transition-all ${
+                    currentPage === page
+                      ? 'bg-primary text-white shadow-lg'
+                      : 'bg-beige-light text-gray-700 hover:bg-beige hover:shadow-md'
+                  }`}
+                >
+                  {page}
+                </button>
+              ))}
+
+              <button
+                onClick={() => setCurrentPage(prev => Math.min(prev + 1, totalPages))}
+                disabled={currentPage === totalPages}
+                className={`w-10 h-10 rounded-full flex items-center justify-center transition-all ${
+                  currentPage === totalPages
+                    ? 'bg-gray-200 text-gray-400 cursor-not-allowed'
+                    : 'bg-beige-light text-gray-700 hover:bg-primary hover:text-white'
+                }`}
+              >
+                →
+              </button>
+            </div>
+          )}
+
+          <div className="text-center">
+            <a href="/contact" className="inline-block font-medium rounded-full transition-all duration-300 text-center px-8 py-4 text-lg bg-primary text-white hover:bg-dark hover:text-white">
+              Demander un programme détaillé
+            </a>
+          </div>
+        </div>
+      </Section>
 
       {/* FAQ */}
       <Section background="white">
