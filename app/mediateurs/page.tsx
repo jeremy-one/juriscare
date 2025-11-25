@@ -219,9 +219,12 @@ export default function MediateursPage() {
                 </div>
               </div>
 
-              <div className="mb-8">
+              <div className="mb-8 flex flex-wrap items-center gap-4">
                 <a href="/Programme - 12 novembre 2025 -  médiation.pdf" target="_blank" rel="noopener noreferrer" className="inline-block font-medium rounded-full transition-all duration-300 text-center px-8 py-3 bg-primary text-white hover:bg-dark">
                   Découvrir le programme
+                </a>
+                <a href="#catalogue" className="text-lg text-gray-700 hover:text-primary transition-colors underline">
+                  Découvrir notre catalogue de formation
                 </a>
               </div>
 
@@ -273,19 +276,27 @@ export default function MediateursPage() {
           </div>
 
           {/* Filtres */}
-          <div className="flex flex-wrap justify-center gap-3 mb-12">
+          <div className="flex flex-wrap justify-center gap-4 mb-12">
             {categories.map((category) => (
-              <button
+              <label
                 key={category}
-                onClick={() => handleCategoryChange(category)}
-                className={`px-6 py-3 rounded-full font-medium transition-all duration-300 ${
-                  selectedCategory === category
-                    ? 'bg-primary text-white shadow-lg'
-                    : 'bg-beige-light text-gray-700 hover:bg-beige hover:shadow-md'
-                }`}
+                className="flex items-center gap-3 cursor-pointer group"
               >
-                {category}
-              </button>
+                <input
+                  type="radio"
+                  name="category"
+                  checked={selectedCategory === category}
+                  onChange={() => handleCategoryChange(category)}
+                  className="appearance-none w-5 h-5 border-2 border-gray-300 rounded-full cursor-pointer transition-all duration-200 checked:border-primary checked:border-[6px] hover:border-gray-400 focus:outline-none focus:ring-2 focus:ring-primary/20"
+                />
+                <span className={`text-base font-medium transition-colors ${
+                  selectedCategory === category
+                    ? 'text-primary'
+                    : 'text-gray-600 group-hover:text-gray-900'
+                }`}>
+                  {category}
+                </span>
+              </label>
             ))}
           </div>
 

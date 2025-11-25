@@ -81,7 +81,7 @@ export default function Home() {
         subtitle="Nous accompagnons les médiateurs, les entreprises et les justiciables dans une nouvelle ère de la résolution amiable."
         cards={[
           { icon: 'scale', text: 'Je suis médiateur', href: '/mediateurs' },
-          { icon: 'academic', text: 'Je veux me former à l\'amiable', href: '/formations' },
+          { icon: 'academic', text: 'Je veux me former à l\'amiable', href: '/mediateurs#formations' },
           { icon: 'users', text: 'Je cherche un service de médiation', href: '/mediation' },
         ]}
       />
