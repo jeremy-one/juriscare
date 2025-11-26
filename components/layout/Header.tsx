@@ -16,6 +16,7 @@ export default function Header() {
       setIsScrolled(window.scrollY > 50);
     };
 
+    handleScroll(); // Vérifier la position initiale au chargement
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
