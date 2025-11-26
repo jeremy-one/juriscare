@@ -5,7 +5,6 @@ import Card from '@/components/ui/Card';
 import Button from '@/components/ui/Button';
 import FAQ from '@/components/ui/FAQ';
 import ParallaxSVG from '@/components/ui/ParallaxSVG';
-import LinkedInFeed from '@/components/sections/LinkedInFeed';
 import MediatorsCarousel from '@/components/ui/MediatorsCarousel';
 import { CheckCircleIcon, ScaleIcon, SparklesIcon } from '@heroicons/react/24/outline';
 
@@ -44,33 +43,6 @@ export default function Home() {
       name: 'Marie Leroy',
       specialties: 'Conflits de voisinage • Immobilier',
       quote: '"La médiation transforme les conflits en opportunités de dialogue."'
-    }
-  ];
-
-  const linkedInPosts = [
-    {
-      id: '1',
-      date: 'Il y a 2 jours',
-      content: '🎯 La médiation n\'est plus une option mais une obligation dans de nombreux litiges civils. Découvrez comment Juriscare accompagne les professionnels et les justiciables dans cette nouvelle ère de la résolution amiable.',
-      link: 'https://www.linkedin.com/company/juriscare',
-      likes: 45,
-      comments: 8
-    },
-    {
-      id: '2',
-      date: 'Il y a 1 semaine',
-      content: '📚 Formation à la médiation : notre prochain cycle démarre le mois prochain ! Au programme : gestion du stress, médiation judiciaire et conventionnelle, éthique des MARD. Inscriptions ouvertes.',
-      link: 'https://www.linkedin.com/company/juriscare',
-      likes: 67,
-      comments: 12
-    },
-    {
-      id: '3',
-      date: 'Il y a 2 semaines',
-      content: '💡 Saviez-vous qu\'une médiation réussie permet d\'économiser en moyenne 70% des coûts d\'une procédure judiciaire classique ? Sans compter le gain de temps et la préservation des relations. #Médiation #Justice',
-      link: 'https://www.linkedin.com/company/juriscare',
-      likes: 89,
-      comments: 15
     }
   ];
 
@@ -205,8 +177,20 @@ export default function Home() {
       </section>
     </div>
 
-      {/* Section LinkedIn Feed */}
-      <LinkedInFeed posts={linkedInPosts} companyUrl="https://www.linkedin.com/company/juriscare" />
+      {/* Section Rejoignez Juriscare */}
+      <Section background="white" className="relative z-10">
+        <div className="max-w-4xl mx-auto text-center">
+          <h2 className="text-4xl sm:text-5xl font-serif font-normal text-gray-900 mb-6 leading-tight">
+            Rejoignez Juriscare
+          </h2>
+          <p className="text-xl text-gray-700 leading-relaxed mb-10">
+            Notre équipe est à votre écoute.
+          </p>
+          <a href="/contact" className="inline-block font-medium rounded-full transition-all duration-300 text-center px-10 py-4 text-lg bg-primary text-white hover:bg-dark">
+            Nous contacter
+          </a>
+        </div>
+      </Section>
 
       {/* Courbe de transition vers le footer */}
       <div className="relative w-full">

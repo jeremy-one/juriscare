@@ -1,9 +1,13 @@
+'use client';
+
+import { useState } from 'react';
 import HeroModern from '@/components/sections/HeroModern';
 import Section from '@/components/ui/Section';
 import FAQ from '@/components/ui/FAQ';
 import { CheckCircleIcon, ClockIcon, LockClosedIcon, UserIcon, ScaleIcon, ChatBubbleLeftRightIcon } from '@heroicons/react/24/outline';
 
 export default function MediationPage() {
+  const [wantCallback, setWantCallback] = useState(false);
   const faqItems = [
     {
       question: "La médiation est-elle vraiment obligatoire ?",
@@ -335,54 +339,64 @@ export default function MediationPage() {
             <form className="space-y-6">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
-                  <label htmlFor="firstname" className="block text-sm font-medium text-gray-700 mb-2">
-                    Prénom *
+                  <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
+                    Nom complet *
                   </label>
                   <input
                     type="text"
-                    id="firstname"
-                    name="firstname"
+                    id="name"
+                    name="name"
                     required
                     className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-primary focus:border-transparent"
+                    placeholder="Jean Dupont"
                   />
                 </div>
+
                 <div>
-                  <label htmlFor="lastname" className="block text-sm font-medium text-gray-700 mb-2">
-                    Nom *
+                  <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
+                    Email *
                   </label>
                   <input
-                    type="text"
-                    id="lastname"
-                    name="lastname"
+                    type="email"
+                    id="email"
+                    name="email"
                     required
                     className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-primary focus:border-transparent"
+                    placeholder="jean.dupont@email.com"
                   />
                 </div>
               </div>
 
-              <div>
-                <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
-                  Email *
-                </label>
-                <input
-                  type="email"
-                  id="email"
-                  name="email"
-                  required
-                  className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-primary focus:border-transparent"
-                />
-              </div>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-end">
+                <div>
+                  <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-2">
+                    Téléphone {wantCallback && '*'}
+                  </label>
+                  <input
+                    type="tel"
+                    id="phone"
+                    name="phone"
+                    required={wantCallback}
+                    className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-primary focus:border-transparent"
+                    placeholder="06 12 34 56 78"
+                  />
+                </div>
 
-              <div>
-                <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-2">
-                  Téléphone
-                </label>
-                <input
-                  type="tel"
-                  id="phone"
-                  name="phone"
-                  className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-primary focus:border-transparent"
-                />
+                <div className="flex items-center h-[50px] bg-white border border-white rounded-lg px-4">
+                  <label className="flex items-center gap-3 cursor-pointer">
+                    <input
+                      type="checkbox"
+                      id="callback"
+                      name="callback"
+                      checked={wantCallback}
+                      onChange={(e) => setWantCallback(e.target.checked)}
+                      className="w-5 h-5 text-primary border-gray-300 rounded focus:ring-2 focus:ring-primary cursor-pointer"
+                    />
+                    <span className="text-sm font-semibold text-gray-700">
+                      Je souhaite être rappelé(e)
+                    </span>
+                  </label>
+                </div>
               </div>
 
               <div>
@@ -412,19 +426,8 @@ export default function MediationPage() {
                   rows={5}
                   required
                   className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-primary focus:border-transparent"
+                  placeholder="Décrivez-nous votre situation ou votre demande..."
                 ></textarea>
-              </div>
-
-              <div className="flex items-start gap-3">
-                <input
-                  type="checkbox"
-                  id="callback"
-                  name="callback"
-                  className="mt-1 w-5 h-5 text-primary border-gray-300 rounded focus:ring-primary"
-                />
-                <label htmlFor="callback" className="text-sm text-gray-600">
-                  Je souhaite être rappelé(e) par téléphone
-                </label>
               </div>
 
               <div className="text-center pt-4">
