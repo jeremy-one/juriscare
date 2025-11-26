@@ -21,7 +21,7 @@ export default function Header() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const shouldShowWhiteBg = isScrolled || isNavHovered;
+  const shouldShowWhiteBg = isScrolled || isNavHovered || isMenuOpen;
 
   return (
     <header className={`fixed top-0 w-full z-50 transition-all duration-300 ${
@@ -87,15 +87,15 @@ export default function Header() {
             aria-label="Toggle menu"
           >
             <div className="w-6 h-5 flex flex-col justify-between">
-              <span className={`block h-0.5 w-full transition-all ${
+              <span className={`block h-0.5 w-full transition-all origin-center ${
                 shouldShowWhiteBg ? 'bg-gray-700' : 'bg-white'
-              } ${isMenuOpen ? 'rotate-45 translate-y-2' : ''}`}></span>
+              } ${isMenuOpen ? 'rotate-45 translate-y-[9px]' : ''}`}></span>
               <span className={`block h-0.5 w-full transition-all ${
                 shouldShowWhiteBg ? 'bg-gray-700' : 'bg-white'
               } ${isMenuOpen ? 'opacity-0' : ''}`}></span>
-              <span className={`block h-0.5 w-full transition-all ${
+              <span className={`block h-0.5 w-full transition-all origin-center ${
                 shouldShowWhiteBg ? 'bg-gray-700' : 'bg-white'
-              } ${isMenuOpen ? '-rotate-45 -translate-y-2' : ''}`}></span>
+              } ${isMenuOpen ? '-rotate-45 -translate-y-[9px]' : ''}`}></span>
             </div>
           </button>
         </div>

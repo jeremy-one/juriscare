@@ -275,8 +275,23 @@ export default function MediateursPage() {
             </h2>
           </div>
 
-          {/* Filtres */}
-          <div className="flex flex-wrap justify-center gap-4 mb-12">
+          {/* Filtres - Mobile (select) */}
+          <div className="md:hidden mb-12">
+            <select
+              value={selectedCategory}
+              onChange={(e) => handleCategoryChange(e.target.value)}
+              className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-primary focus:border-transparent text-gray-700 font-medium"
+            >
+              {categories.map((category) => (
+                <option key={category} value={category}>
+                  {category}
+                </option>
+              ))}
+            </select>
+          </div>
+
+          {/* Filtres - Desktop (radio buttons) */}
+          <div className="hidden md:flex flex-wrap justify-center gap-4 mb-12">
             {categories.map((category) => (
               <label
                 key={category}
