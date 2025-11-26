@@ -150,7 +150,7 @@ export default function Home() {
           </div>
 
           {/* Carousel + Image à droite - hauteur fixe */}
-          <div className="relative lg:order-2 h-[400px] lg:h-[700px]">
+          <div className="relative lg:order-2 min-h-[550px] lg:min-h-[700px]">
             {/* Image de fond */}
             <img
               src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?q=80&w=2070&auto=format&fit=crop"
