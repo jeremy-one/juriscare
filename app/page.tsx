@@ -59,7 +59,7 @@ export default function Home() {
       />
 
       {/* Qui sommes-nous */}
-      <Section background="white">
+      <Section background="none" className="relative z-10 bg-transparent">
         <div className="max-w-5xl mx-auto text-center">
           <h2 className="text-4xl sm:text-5xl font-serif font-normal text-gray-900 mb-8 leading-tight">
             Qui sommes-nous ?
