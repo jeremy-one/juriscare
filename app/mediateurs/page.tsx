@@ -246,13 +246,16 @@ export default function MediateursPage() {
                 <p className="mb-2">
                   <strong>Important :</strong> Inscription dans les 7 jours précédant la formation.
                 </p>
-                <div className="flex gap-3 text-xs">
-                  <a href="/2025 - Gérer le handicap - Guide à destination du public.pdf" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">Guide PSH</a>
+                <div className="flex gap-3 text-xs mb-3">
+                  <a href="/2025 - Gérer le handicap - Guide à destination du public.pdf" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">Guide PSH<sup>*</sup></a>
                   <a href="https://formation.side-quest.io/conditions-generales-d-utilisation-copie/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">CGU</a>
                   <a href="https://formation.side-quest.io/cgv-copie/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">CGV</a>
                   <a href="https://formation.side-quest.io/politique-de-confidentialite-copie/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">Confidentialité</a>
                   <a href="https://formation.side-quest.io/reglement-interieur-copie/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">Règlement</a>
                 </div>
+                <p className="italic text-gray-500">
+                  <sup>*</sup>Des aménagements sont possibles sur demande avec étude au cas par cas. <a href="/contact" className="text-primary hover:underline">Contactez-nous</a>. Vous pouvez consulter notre guide sur la prise en compte des situations de handicap. <a href="/V2 Programme -  médiation.pdf" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">Cliquez-ici</a>
+                </p>
               </div>
             </div>
           </div>
