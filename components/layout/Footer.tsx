@@ -78,8 +78,24 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400 text-sm">
+        <div className="border-t border-gray-700 mt-8 pt-8 text-gray-400 text-sm relative flex justify-center items-center">
           <p>&copy; {new Date().getFullYear()} Juriscare. Tous droits réservés.</p>
+          <a
+            href="https://bl-nk.fr/"
+            target="_blank"
+            rel="dofollow"
+            title="BL-NK Conception - Agence web"
+            className="absolute right-0"
+          >
+            <img
+              src="/images/BL NK CONCEPTION WHITE.svg"
+              alt="BL-NK Conception"
+              className="w-[100px] h-auto opacity-60 hover:opacity-100 transition-opacity"
+              width={100}
+              height={31}
+              loading="lazy"
+            />
+          </a>
         </div>
       </div>
     </footer>
