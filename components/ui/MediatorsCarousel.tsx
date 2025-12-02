@@ -32,7 +32,7 @@ export default function MediatorsCarousel({ mediators }: MediatorsCarouselProps)
   return (
     <div className="relative">
       {/* Card mediateur */}
-      <div className="bg-white/90 backdrop-blur-sm rounded-2xl p-8 shadow-lg">
+      <div className="bg-white/90 backdrop-blur-sm rounded-2xl p-8 shadow-lg min-h-[375px] flex flex-col justify-center">
         {currentMediator.photo ? (
           <div className="w-32 h-32 rounded-full mx-auto mb-6 overflow-hidden bg-beige/30">
             <Image
