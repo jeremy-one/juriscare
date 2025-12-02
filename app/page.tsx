@@ -30,19 +30,39 @@ export default function Home() {
 
   const mediators = [
     {
-      name: 'Sophie Martin',
-      specialties: 'Droit commercial • Droit des affaires',
-      quote: '"La médiation permet de préserver les relations tout en trouvant des solutions durables."'
+      name: 'Andréa Plumel',
+      title: 'Avocat & Médiateur',
+      specialties: 'Famille et patrimoine',
+      photo: '/mediators/andrea-plumel.jpg',
+      linkedin: 'https://www.linkedin.com/in/andrea-plumel/'
     },
     {
-      name: 'Jean Dubois',
-      specialties: 'Droit de la famille • Succession',
-      quote: '"Écouter avant de juger, comprendre avant de décider."'
+      name: 'Carine Denoit-Benteux',
+      title: 'Avocat Famille & Patrimoine',
+      specialties: 'Médiateur - Vice-bâtonnière élue - Barreau de Paris',
+      photo: '/mediators/carine-denoit-benteux.jpg',
+      linkedin: 'https://www.linkedin.com/in/carine-denoit-benteux-22856949/'
     },
     {
-      name: 'Marie Leroy',
-      specialties: 'Conflits de voisinage • Immobilier',
-      quote: '"La médiation transforme les conflits en opportunités de dialogue."'
+      name: 'Hirbod Dehghani-Azar',
+      title: 'Avocat associé - Médiateur - Formateur',
+      specialties: "AMCNB - Ancien Membre du Conseil de l'Ordre",
+      photo: '/mediators/hirbod-dehghani-azar.jpg',
+      linkedin: 'https://www.linkedin.com/in/hirbod-dehghani-azar-a76b606/'
+    },
+    {
+      name: 'Homam Royaï',
+      title: 'Avocat-fiscaliste',
+      specialties: 'Fondateur et associé du Cabinet RSDA - Gestion de patrimoine - Fiscalité',
+      photo: '/mediators/homam-royai.jpg',
+      linkedin: 'https://www.linkedin.com/in/homam-royaï-879234207/'
+    },
+    {
+      name: 'Stephen Bensimon',
+      title: 'Philosophe, Médiateur AME FFCM',
+      specialties: "Fondateur et Président de l'Ifomene ICP - Professeur affilié ScPo",
+      photo: '/mediators/stephen-bensimon.jpg',
+      linkedin: 'https://www.linkedin.com/in/stephen-bensimon-41625319a/'
     }
   ];
 

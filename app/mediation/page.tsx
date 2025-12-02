@@ -5,9 +5,49 @@ import HeroModern from '@/components/sections/HeroModern';
 import Section from '@/components/ui/Section';
 import FAQ from '@/components/ui/FAQ';
 import { CheckCircleIcon, ClockIcon, LockClosedIcon, UserIcon, ScaleIcon, ChatBubbleLeftRightIcon } from '@heroicons/react/24/outline';
+import MediatorsCarousel from '@/components/ui/MediatorsCarousel';
 
 export default function MediationPage() {
   const [wantCallback, setWantCallback] = useState(false);
+
+  const mediators = [
+    {
+      name: 'Andréa Plumel',
+      title: 'Avocat & Médiateur',
+      specialties: 'Famille et patrimoine',
+      photo: '/mediators/andrea-plumel.jpg',
+      linkedin: 'https://www.linkedin.com/in/andrea-plumel/'
+    },
+    {
+      name: 'Carine Denoit-Benteux',
+      title: 'Avocat Famille & Patrimoine',
+      specialties: 'Médiateur - Vice-bâtonnière élue - Barreau de Paris',
+      photo: '/mediators/carine-denoit-benteux.jpg',
+      linkedin: 'https://www.linkedin.com/in/carine-denoit-benteux-22856949/'
+    },
+    {
+      name: 'Hirbod Dehghani-Azar',
+      title: 'Avocat associé - Médiateur - Formateur',
+      specialties: "AMCNB - Ancien Membre du Conseil de l'Ordre",
+      photo: '/mediators/hirbod-dehghani-azar.jpg',
+      linkedin: 'https://www.linkedin.com/in/hirbod-dehghani-azar-a76b606/'
+    },
+    {
+      name: 'Homam Royaï',
+      title: 'Avocat-fiscaliste',
+      specialties: 'Fondateur et associé du Cabinet RSDA - Gestion de patrimoine - Fiscalité',
+      photo: '/mediators/homam-royai.jpg',
+      linkedin: 'https://www.linkedin.com/in/homam-royaï-879234207/'
+    },
+    {
+      name: 'Stephen Bensimon',
+      title: 'Philosophe, Médiateur AME FFCM',
+      specialties: "Fondateur et Président de l'Ifomene ICP - Professeur affilié ScPo",
+      photo: '/mediators/stephen-bensimon.jpg',
+      linkedin: 'https://www.linkedin.com/in/stephen-bensimon-41625319a/'
+    }
+  ];
+
   const faqItems = [
     {
       question: "La médiation est-elle vraiment obligatoire ?",
@@ -104,14 +144,19 @@ export default function MediationPage() {
       {/* Nos services - Layout gauche/droite */}
       <section className="bg-beige-light py-0 relative" id="services">
         <div className="grid grid-cols-1 lg:grid-cols-2">
-          {/* Image à gauche */}
-          <div className="relative lg:order-1 h-[400px] lg:h-auto lg:min-h-full">
+          {/* Carousel à gauche */}
+          <div className="relative lg:order-1 min-h-[550px] lg:min-h-[700px]">
             <img
               src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?q=80&w=2071&auto=format&fit=crop"
               alt="Services de médiation"
               className="absolute inset-0 w-full h-full object-cover"
             />
-            <div className="absolute inset-0 bg-black/10"></div>
+            <div className="absolute inset-0 bg-black/20"></div>
+            <div className="absolute inset-0 flex items-center justify-center p-8">
+              <div className="w-full max-w-md">
+                <MediatorsCarousel mediators={mediators} />
+              </div>
+            </div>
           </div>
 
           {/* Contenu à droite */}
