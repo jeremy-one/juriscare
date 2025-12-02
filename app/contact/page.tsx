@@ -40,7 +40,7 @@ export default function Contact() {
         image="https://images.unsplash.com/photo-1556761175-b413da4baf72?q=80&w=2074&auto=format&fit=crop"
       />
 
-      <Section id="contact" background="none" className="md:!pt-0 md:!pb-32 md:-mt-24 relative z-[999999]">
+      <Section id="contact" background="none" className="md:!pt-0 md:!pb-32 md:-mt-24 relative z-10">
         <div className="max-w-6xl mx-auto">
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
