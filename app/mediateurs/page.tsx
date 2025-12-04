@@ -23,6 +23,10 @@ export default function MediateursPage() {
     {
       question: "Qui sont nos formateurs ?",
       answer: "Nos formations sont dispensées par des experts reconnus dans leur domaine. <a href='/CV_AP.pdf' target='_blank' rel='noopener noreferrer' class='text-primary underline hover:no-underline'>Découvrez le parcours de notre formatrice Andréa</a>."
+    },
+    {
+      question: "Quelles sont les modalités d'enseignement ?",
+      answer: "Nos formations sont disponibles en présentiel ou en ligne. Nous adaptons les modalités de suivi aux besoins spécifiques de chaque apprenant, notamment pour les personnes en situation de handicap. <a href='/2025 - Gérer le handicap - Guide à destination du public.pdf' target='_blank' rel='noopener noreferrer' class='text-primary underline hover:no-underline'>Consultez notre guide d'accessibilité</a>."
     }
   ];
 
