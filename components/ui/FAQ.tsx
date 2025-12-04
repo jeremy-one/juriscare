@@ -49,9 +49,10 @@ export default function FAQ({ items }: FAQProps) {
               openIndex === index ? 'max-h-96' : 'max-h-0'
             }`}
           >
-            <div className="px-8 py-6 text-gray-600 leading-relaxed border-t border-gray-100">
-              {item.answer}
-            </div>
+            <div
+              className="px-8 py-6 text-gray-600 leading-relaxed border-t border-gray-100"
+              dangerouslySetInnerHTML={{ __html: item.answer }}
+            />
           </div>
         </div>
       ))}

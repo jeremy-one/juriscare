@@ -19,6 +19,10 @@ export default function MediateursPage() {
     {
       question: "Puis-je accéder à vos formations sans adhérer ?",
       answer: "Oui, nos formations sont ouvertes à tous les médiateurs, qu'ils fassent partie du réseau Juriscare ou non."
+    },
+    {
+      question: "Qui sont nos formateurs ?",
+      answer: "Nos formations sont dispensées par des experts reconnus dans leur domaine. <a href='/CV_AP.pdf' target='_blank' rel='noopener noreferrer' class='text-primary underline hover:no-underline'>Découvrez le parcours de notre formatrice Andréa</a>."
     }
   ];
 
@@ -200,16 +204,10 @@ export default function MediateursPage() {
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
                 <div className="bg-white rounded-xl p-4">
-                  <h3 className="font-serif font-semibold text-gray-900">✓ Formations certifiantes</h3>
-                </div>
-                <div className="bg-white rounded-xl p-4">
                   <h3 className="font-serif font-semibold text-gray-900">✓ En ligne ou présentiel</h3>
                 </div>
                 <div className="bg-white rounded-xl p-4">
                   <h3 className="font-serif font-semibold text-gray-900">✓ Experts reconnus</h3>
-                </div>
-                <div className="bg-white rounded-xl p-4">
-                  <h3 className="font-serif font-semibold text-gray-900">✓ Formation continue</h3>
                 </div>
                 <div className="bg-white rounded-xl p-4">
                   <h3 className="font-serif font-semibold text-gray-900">✓ Analyse de pratique</h3>
@@ -273,9 +271,12 @@ export default function MediateursPage() {
       <Section background="white" id="catalogue">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12">
-            <h2 className="text-4xl sm:text-5xl font-serif font-normal text-gray-900 mb-8 leading-tight">
-              Catalogue de formations
+            <h2 className="text-4xl sm:text-5xl font-serif font-normal text-gray-900 mb-4 leading-tight">
+              Nos thématiques d'expertise
             </h2>
+            <p className="text-xl text-gray-600">
+              Découvrez ce sur quoi nous pouvons vous accompagner
+            </p>
           </div>
 
           {/* Filtres - Mobile (select) */}
@@ -389,8 +390,11 @@ export default function MediateursPage() {
           )}
 
           <div className="text-center">
-            <a href="/contact" className="inline-block font-medium rounded-full transition-all duration-300 text-center px-8 py-4 text-lg bg-primary text-white hover:bg-dark hover:text-white">
-              Demander un programme détaillé
+            <p className="text-lg text-gray-600 mb-6">
+              Nous avons déjà formé nos collaborateurs sur le sujet, découvrez leur appréciation
+            </p>
+            <a href="/V2 Programme -  médiation.pdf" target="_blank" rel="noopener noreferrer" className="inline-block font-medium rounded-full transition-all duration-300 text-center px-8 py-4 text-lg bg-primary text-white hover:bg-dark hover:text-white">
+              Programme détaillé
             </a>
           </div>
         </div>
