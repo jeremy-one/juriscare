@@ -154,7 +154,7 @@ export default function MediationPage() {
             <div className="absolute inset-0 bg-black/20"></div>
             <div className="absolute inset-0 flex items-center justify-center p-8">
               <div className="w-full max-w-md">
-                <MediatorsCarousel mediators={mediators} />
+                {/* <MediatorsCarousel mediators={mediators} /> - MASQUÉ TEMPORAIREMENT */}
               </div>
             </div>
           </div>

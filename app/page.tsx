@@ -104,7 +104,7 @@ export default function Home() {
                 Pourquoi la médiation<br />est-elle devenue indispensable ?
               </h2>
               <p className="text-xl text-gray-700 leading-relaxed max-w-3xl mx-auto">
-                La médiation est devenue un passage obligatoire dans de nombreux litiges civils. Les tribunaux encouragent activement les parties à se tourner vers des solutions amiables et tous les mouvements législatifs vont dans ce sens pour donner plus d&apos;efficacité à la Justice Civile.
+                La médiation est devenue un passage obligatoire dans de nombreux litiges civils. Les tribunaux encouragent activement les parties à se tourner vers des solutions amiables et tous les mouvements législatifs vont dans ce sens pour donner plus d&apos;efficacité à la Justice.
               </p>
             </div>
 
@@ -149,7 +149,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Section Nos médiateurs - Layout gauche/droite */}
+      {/* Section Nos médiateurs - Layout gauche/droite - Layout gauche/droite */}
       <section className="bg-beige-light py-0 relative">
         <div className="grid grid-cols-1 lg:grid-cols-2">
           {/* Contenu à gauche */}
@@ -182,7 +182,7 @@ export default function Home() {
             {/* Carousel positionné au centre */}
             <div className="absolute inset-0 flex items-center justify-center p-8">
               <div className="w-full max-w-md">
-                <MediatorsCarousel mediators={mediators} />
+                {/* <MediatorsCarousel mediators={mediators} /> - MASQUÉ TEMPORAIREMENT */}
               </div>
             </div>
           </div>
