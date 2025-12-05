@@ -1,7 +1,7 @@
 import { NextResponse } from 'next/server';
 
 const MAILER_HUB_URL = 'https://mail.bl-nk.io/wp-json/mailer-hub/v2/send';
-const MAILER_HUB_TOKEN = 'sU7SYFpGdNylzRPyj7oohPNWzi4bmIyWvNsaMkck649ORTXG';
+const MAILER_HUB_TOKEN = 'XNaoM3JeWOv1dheSGoRXu3XKSahOkAMIzkSmDBJpKKWPSEwi';
 
 interface ContactPayload {
   name: string;
