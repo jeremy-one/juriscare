@@ -11,11 +11,32 @@ interface ContactPayload {
   message: string;
   wantCallback?: boolean;
   service?: string;
+  // Anti-spam
+  website?: string; // Honeypot field
+  _timestamp?: number; // Form load timestamp
 }
+
+const MIN_SUBMIT_TIME_MS = 3000; // 3 secondes minimum pour remplir le formulaire
 
 export async function POST(request: Request) {
   try {
     const body: ContactPayload = await request.json();
+
+    // Anti-spam: Honeypot check (si rempli = bot)
+    if (body.website) {
+      console.log('Spam detected: honeypot filled');
+      // On retourne success pour ne pas alerter le bot
+      return NextResponse.json({ success: true });
+    }
+
+    // Anti-spam: Timestamp check (si trop rapide = bot)
+    if (body._timestamp) {
+      const timeDiff = Date.now() - body._timestamp;
+      if (timeDiff < MIN_SUBMIT_TIME_MS) {
+        console.log('Spam detected: form submitted too fast', timeDiff, 'ms');
+        return NextResponse.json({ success: true });
+      }
+    }
 
     // Validation des champs requis
     if (!body.name || !body.email || !body.subject) {

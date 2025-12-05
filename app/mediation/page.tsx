@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import React, { useState } from 'react';
 import HeroModern from '@/components/sections/HeroModern';
 import Section from '@/components/ui/Section';
 import FAQ from '@/components/ui/FAQ';
@@ -19,6 +19,13 @@ export default function MediationPage() {
   const [isLoading, setIsLoading] = useState(false);
   const [status, setStatus] = useState<'idle' | 'success' | 'error'>('idle');
   const [errorMessage, setErrorMessage] = useState('');
+  const [formTimestamp, setFormTimestamp] = useState(0);
+  const [honeypot, setHoneypot] = useState('');
+
+  // Set timestamp on mount for anti-spam
+  React.useEffect(() => {
+    setFormTimestamp(Date.now());
+  }, []);
 
   const serviceLabels: Record<string, string> = {
     niveau1: "Niveau 1 - Attestation d'information",
@@ -43,7 +50,9 @@ export default function MediationPage() {
           subject: `[Médiation] ${serviceLabels[formData.service] || formData.service}`,
           message: formData.message,
           wantCallback: formData.wantCallback,
-          service: formData.service
+          service: formData.service,
+          website: honeypot,
+          _timestamp: formTimestamp
         })
       });
 
@@ -470,6 +479,18 @@ export default function MediationPage() {
                     {errorMessage}
                   </div>
                 )}
+
+                {/* Honeypot anti-spam field - hidden from users */}
+                <div className="absolute -left-[9999px]" aria-hidden="true">
+                  <input
+                    type="text"
+                    name="website"
+                    value={honeypot}
+                    onChange={(e) => setHoneypot(e.target.value)}
+                    tabIndex={-1}
+                    autoComplete="off"
+                  />
+                </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>

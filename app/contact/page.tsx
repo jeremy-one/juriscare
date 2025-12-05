@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import React, { useState } from 'react';
 import HeroModern from '@/components/sections/HeroModern';
 import Section from '@/components/ui/Section';
 import Button from '@/components/ui/Button';
@@ -17,6 +17,13 @@ export default function Contact() {
   const [isLoading, setIsLoading] = useState(false);
   const [status, setStatus] = useState<'idle' | 'success' | 'error'>('idle');
   const [errorMessage, setErrorMessage] = useState('');
+  const [formTimestamp, setFormTimestamp] = useState(0);
+  const [honeypot, setHoneypot] = useState('');
+
+  // Set timestamp on mount for anti-spam
+  React.useEffect(() => {
+    setFormTimestamp(Date.now());
+  }, []);
 
   const subjectLabels: Record<string, string> = {
     mediation: 'Démarrer une médiation',
@@ -41,7 +48,9 @@ export default function Contact() {
           phone: formData.phone,
           subject: `[Contact] ${subjectLabels[formData.subject] || formData.subject}`,
           message: formData.message,
-          wantCallback: formData.wantCallback
+          wantCallback: formData.wantCallback,
+          website: honeypot,
+          _timestamp: formTimestamp
         })
       });
 
@@ -108,6 +117,18 @@ export default function Contact() {
                       {errorMessage}
                     </div>
                   )}
+
+                  {/* Honeypot anti-spam field - hidden from users */}
+                  <div className="absolute -left-[9999px]" aria-hidden="true">
+                    <input
+                      type="text"
+                      name="website"
+                      value={honeypot}
+                      onChange={(e) => setHoneypot(e.target.value)}
+                      tabIndex={-1}
+                      autoComplete="off"
+                    />
+                  </div>
 
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div>
