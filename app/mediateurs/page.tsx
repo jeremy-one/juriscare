@@ -26,7 +26,7 @@ export default function MediateursPage() {
     },
     {
       question: "Quelles sont les modalités d'enseignement ?",
-      answer: "La formation est animée en direct et à distance, selon les dates et horaires indiqués dans le programme (<a href='/Programme%20-%2012%20novembre%202025%20-%20%20médiation.pdf' target='_blank' rel='noopener noreferrer' class='text-primary underline hover:no-underline'>voir le programme</a>).<br/><br/>Elle repose sur différentes approches pédagogiques — magistrale, démonstrative et active — avec une alternance d'exposés, de démonstrations et d'exercices pratiques.<br/><br/>Les supports essentiels sont transmis aux participants à l'issue de la session. Le suivi du déroulement et l'interactivité sont assurés via Google Agenda et Google Forms, afin de faciliter la participation et le bon déroulement de la formation.<br/><br/>Des aménagements spécifiques peuvent être étudiés en cas de besoin particulier."
+      answer: "En fonction de vos besoins, Juriscare propose des formations en présentiel ou à distance : le format, le rythme et les modalités sont toujours ajustés en fonction du public accompagné ; nous nous adaptons systématiquement à chaque apprenant.<br/><br/>Découvrez un exemple d'une formation déjà animée ici : <a href='/Programme%20-%2012%20novembre%202025%20-%20%20médiation.pdf' target='_blank' rel='noopener noreferrer' class='text-primary underline hover:no-underline'>voir l'exemple</a>.<br/><br/>Les supports essentiels sont transmis aux participants à l'issue de la session.<br/><br/>L'atteinte des objectifs pédagogiques est évaluée via la soumission d'un contrôle de connaissances en cours de formation."
     },
     {
       question: "Comment ça se passe si j'ai des besoins spécifiques ?",
