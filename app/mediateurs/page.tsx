@@ -225,10 +225,7 @@ export default function MediateursPage() {
                 </div>
               </div>
 
-              <div className="mb-8 flex flex-wrap items-center gap-4">
-                <a href="/Programme - 12 novembre 2025 -  médiation.pdf" target="_blank" rel="noopener noreferrer" className="inline-block font-medium rounded-full transition-all duration-300 text-center px-8 py-3 bg-primary text-white hover:bg-dark">
-                  Découvrir le programme
-                </a>
+              <div className="mb-8">
                 <a href="#catalogue" className="text-lg text-gray-700 hover:text-primary transition-colors underline">
                   Découvrir notre catalogue de formation
                 </a>
