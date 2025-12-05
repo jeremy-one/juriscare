@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import HeroModern from '@/components/sections/HeroModern';
 import Section from '@/components/ui/Section';
@@ -22,11 +22,15 @@ export default function MediateursPage() {
     },
     {
       question: "Qui sont nos formateurs ?",
-      answer: "Nos formations sont dispensées par des experts reconnus dans leur domaine. <a href='/CV_AP.pdf' target='_blank' rel='noopener noreferrer' class='text-primary underline hover:no-underline'>Découvrez le parcours de notre formatrice Andréa</a>."
+      answer: "Nos formations sont dispensées par des experts reconnus dans leur domaine. <a href='/CV_AP.pdf' target='_blank' rel='noopener noreferrer' class='text-primary underline hover:no-underline'>Découvrez le parcours de notre formatrice Andréa Plumel</a>."
     },
     {
       question: "Quelles sont les modalités d'enseignement ?",
-      answer: "Nos formations sont disponibles en présentiel ou en ligne. Nous adaptons les modalités de suivi aux besoins spécifiques de chaque apprenant, notamment pour les personnes en situation de handicap. <a href='/2025 - Gérer le handicap - Guide à destination du public.pdf' target='_blank' rel='noopener noreferrer' class='text-primary underline hover:no-underline'>Consultez notre guide d'accessibilité</a>."
+      answer: "La formation est animée en direct et à distance, selon les dates et horaires indiqués dans le programme (<a href='/Programme%20-%2012%20novembre%202025%20-%20%20médiation.pdf' target='_blank' rel='noopener noreferrer' class='text-primary underline hover:no-underline'>voir le programme</a>).<br/><br/>Elle repose sur différentes approches pédagogiques — magistrale, démonstrative et active — avec une alternance d'exposés, de démonstrations et d'exercices pratiques.<br/><br/>Les supports essentiels sont transmis aux participants à l'issue de la session. Le suivi du déroulement et l'interactivité sont assurés via Google Agenda et Google Forms, afin de faciliter la participation et le bon déroulement de la formation.<br/><br/>Des aménagements spécifiques peuvent être étudiés en cas de besoin particulier."
+    },
+    {
+      question: "Comment ça se passe si j'ai des besoins spécifiques ?",
+      answer: "Si vous avez un besoin particulier, nous l'étudions avec attention afin de mettre en place les aménagements pédagogiques ou organisationnels nécessaires. Pour que nous puissions comprendre votre situation et adapter nos modalités, vous pouvez nous contacter à <a href='mailto:contact@juriscare.fr' class='text-primary underline hover:no-underline'>contact@juriscare.fr</a>."
     }
   ];
 
@@ -421,3 +425,4 @@ export default function MediateursPage() {
     </>
   );
 }
+
