@@ -7,6 +7,7 @@ interface ButtonProps {
   size?: 'sm' | 'md' | 'lg';
   className?: string;
   onClick?: () => void;
+  disabled?: boolean;
 }
 
 export default function Button({
@@ -15,7 +16,8 @@ export default function Button({
   variant = 'primary',
   size = 'md',
   className = '',
-  onClick
+  onClick,
+  disabled = false
 }: ButtonProps) {
   const baseStyles = 'inline-block font-medium rounded-full transition-all duration-300 text-center';
 
@@ -42,7 +44,7 @@ export default function Button({
   }
 
   return (
-    <button onClick={onClick} className={styles}>
+    <button onClick={onClick} className={styles} disabled={disabled}>
       {children}
     </button>
   );
