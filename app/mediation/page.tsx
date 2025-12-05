@@ -8,7 +8,77 @@ import { CheckCircleIcon, ClockIcon, LockClosedIcon, UserIcon, ScaleIcon, ChatBu
 import MediatorsCarousel from '@/components/ui/MediatorsCarousel';
 
 export default function MediationPage() {
-  const [wantCallback, setWantCallback] = useState(false);
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    phone: '',
+    service: '',
+    message: '',
+    wantCallback: false
+  });
+  const [isLoading, setIsLoading] = useState(false);
+  const [status, setStatus] = useState<'idle' | 'success' | 'error'>('idle');
+  const [errorMessage, setErrorMessage] = useState('');
+
+  const serviceLabels: Record<string, string> = {
+    niveau1: "Niveau 1 - Attestation d'information",
+    niveau2: 'Niveau 2 - Médiation',
+    niveau3: 'Niveau 3 - Accompagnement à la négociation'
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsLoading(true);
+    setStatus('idle');
+    setErrorMessage('');
+
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          phone: formData.phone,
+          subject: `[Médiation] ${serviceLabels[formData.service] || formData.service}`,
+          message: formData.message,
+          wantCallback: formData.wantCallback,
+          service: formData.service
+        })
+      });
+
+      const data = await response.json();
+
+      if (!response.ok || !data.success) {
+        throw new Error(data.error || "Erreur lors de l'envoi");
+      }
+
+      setStatus('success');
+      setFormData({
+        name: '',
+        email: '',
+        phone: '',
+        service: '',
+        message: '',
+        wantCallback: false
+      });
+    } catch (error) {
+      setStatus('error');
+      setErrorMessage(error instanceof Error ? error.message : 'Une erreur est survenue');
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+    const { name, value, type } = e.target;
+    const checked = (e.target as HTMLInputElement).checked;
+
+    setFormData({
+      ...formData,
+      [name]: type === 'checkbox' ? checked : value
+    });
+  };
 
   const mediators = [
     {
@@ -381,109 +451,145 @@ export default function MediationPage() {
           </div>
 
           <div className="bg-beige-light rounded-2xl p-8 lg:p-12">
-            <form className="space-y-6">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div>
-                  <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
-                    Nom complet *
-                  </label>
-                  <input
-                    type="text"
-                    id="name"
-                    name="name"
-                    required
-                    className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-primary focus:border-transparent"
-                    placeholder="Jean Dupont"
-                  />
-                </div>
-
-                <div>
-                  <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
-                    Email *
-                  </label>
-                  <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    required
-                    className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-primary focus:border-transparent"
-                    placeholder="jean.dupont@email.com"
-                  />
-                </div>
-              </div>
-
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-end">
-                <div>
-                  <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-2">
-                    Téléphone {wantCallback && '*'}
-                  </label>
-                  <input
-                    type="tel"
-                    id="phone"
-                    name="phone"
-                    required={wantCallback}
-                    className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-primary focus:border-transparent"
-                    placeholder="06 12 34 56 78"
-                  />
-                </div>
-
-                <div className="flex items-center h-[50px] bg-white border border-white rounded-lg px-4">
-                  <label className="flex items-center gap-3 cursor-pointer">
-                    <input
-                      type="checkbox"
-                      id="callback"
-                      name="callback"
-                      checked={wantCallback}
-                      onChange={(e) => setWantCallback(e.target.checked)}
-                      className="w-5 h-5 text-primary border-gray-300 rounded focus:ring-2 focus:ring-primary cursor-pointer"
-                    />
-                    <span className="text-sm font-semibold text-gray-700">
-                      Je souhaite être rappelé(e)
-                    </span>
-                  </label>
-                </div>
-              </div>
-
-              <div>
-                <label htmlFor="service" className="block text-sm font-medium text-gray-700 mb-2">
-                  Niveau de service souhaité *
-                </label>
-                <select
-                  id="service"
-                  name="service"
-                  required
-                  className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-primary focus:border-transparent"
-                >
-                  <option value="">Choisissez un service</option>
-                  <option value="niveau1">Niveau 1 - Attestation d&apos;information</option>
-                  <option value="niveau2">Niveau 2 - Médiation</option>
-                  <option value="niveau3">Niveau 3 - Accompagnement à la négociation</option>
-                </select>
-              </div>
-
-              <div>
-                <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">
-                  Décrivez brièvement votre situation *
-                </label>
-                <textarea
-                  id="message"
-                  name="message"
-                  rows={5}
-                  required
-                  className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-primary focus:border-transparent"
-                  placeholder="Décrivez-nous votre situation ou votre demande..."
-                ></textarea>
-              </div>
-
-              <div className="text-center pt-4">
+            {status === 'success' ? (
+              <div className="text-center py-12">
+                <div className="text-5xl mb-4">✓</div>
+                <h3 className="text-2xl font-serif font-semibold text-gray-900 mb-4">Demande envoyée !</h3>
+                <p className="text-gray-600 mb-6">Merci pour votre demande. Nous vous recontacterons rapidement pour vous accompagner.</p>
                 <button
-                  type="submit"
-                  className="inline-block font-medium rounded-full transition-all duration-300 text-center px-12 py-4 text-lg bg-primary text-white hover:bg-dark"
+                  onClick={() => setStatus('idle')}
+                  className="inline-block font-medium rounded-full transition-all duration-300 text-center px-8 py-3 bg-primary text-white hover:bg-dark"
                 >
-                  Lancer ma demande
+                  Envoyer une autre demande
                 </button>
               </div>
-            </form>
+            ) : (
+              <form onSubmit={handleSubmit} className="space-y-6">
+                {status === 'error' && (
+                  <div className="bg-red-50 border border-red-200 text-red-700 px-4 py-3 rounded-lg">
+                    {errorMessage}
+                  </div>
+                )}
+
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <div>
+                    <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
+                      Nom complet *
+                    </label>
+                    <input
+                      type="text"
+                      id="name"
+                      name="name"
+                      required
+                      value={formData.name}
+                      onChange={handleChange}
+                      disabled={isLoading}
+                      className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-primary focus:border-transparent disabled:opacity-50"
+                      placeholder="Jean Dupont"
+                    />
+                  </div>
+
+                  <div>
+                    <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
+                      Email *
+                    </label>
+                    <input
+                      type="email"
+                      id="email"
+                      name="email"
+                      required
+                      value={formData.email}
+                      onChange={handleChange}
+                      disabled={isLoading}
+                      className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-primary focus:border-transparent disabled:opacity-50"
+                      placeholder="jean.dupont@email.com"
+                    />
+                  </div>
+                </div>
+
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-end">
+                  <div>
+                    <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-2">
+                      Téléphone {formData.wantCallback && '*'}
+                    </label>
+                    <input
+                      type="tel"
+                      id="phone"
+                      name="phone"
+                      required={formData.wantCallback}
+                      value={formData.phone}
+                      onChange={handleChange}
+                      disabled={isLoading}
+                      className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-primary focus:border-transparent disabled:opacity-50"
+                      placeholder="06 12 34 56 78"
+                    />
+                  </div>
+
+                  <div className="flex items-center h-[50px] bg-white border border-white rounded-lg px-4">
+                    <label className="flex items-center gap-3 cursor-pointer">
+                      <input
+                        type="checkbox"
+                        name="wantCallback"
+                        checked={formData.wantCallback}
+                        onChange={handleChange}
+                        disabled={isLoading}
+                        className="w-5 h-5 text-primary border-gray-300 rounded focus:ring-2 focus:ring-primary cursor-pointer"
+                      />
+                      <span className="text-sm font-semibold text-gray-700">
+                        Je souhaite être rappelé(e)
+                      </span>
+                    </label>
+                  </div>
+                </div>
+
+                <div>
+                  <label htmlFor="service" className="block text-sm font-medium text-gray-700 mb-2">
+                    Niveau de service souhaité *
+                  </label>
+                  <select
+                    id="service"
+                    name="service"
+                    required
+                    value={formData.service}
+                    onChange={handleChange}
+                    disabled={isLoading}
+                    className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-primary focus:border-transparent disabled:opacity-50"
+                  >
+                    <option value="">Choisissez un service</option>
+                    <option value="niveau1">Niveau 1 - Attestation d&apos;information</option>
+                    <option value="niveau2">Niveau 2 - Médiation</option>
+                    <option value="niveau3">Niveau 3 - Accompagnement à la négociation</option>
+                  </select>
+                </div>
+
+                <div>
+                  <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">
+                    Décrivez brièvement votre situation *
+                  </label>
+                  <textarea
+                    id="message"
+                    name="message"
+                    rows={5}
+                    required
+                    value={formData.message}
+                    onChange={handleChange}
+                    disabled={isLoading}
+                    className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-primary focus:border-transparent disabled:opacity-50"
+                    placeholder="Décrivez-nous votre situation ou votre demande..."
+                  ></textarea>
+                </div>
+
+                <div className="text-center pt-4">
+                  <button
+                    type="submit"
+                    disabled={isLoading}
+                    className="inline-block font-medium rounded-full transition-all duration-300 text-center px-12 py-4 text-lg bg-primary text-white hover:bg-dark disabled:opacity-50"
+                  >
+                    {isLoading ? 'Envoi en cours...' : 'Lancer ma demande'}
+                  </button>
+                </div>
+              </form>
+            )}
           </div>
         </div>
       </Section>
