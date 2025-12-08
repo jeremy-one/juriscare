@@ -6,6 +6,6 @@ export default function robots(): MetadataRoute.Robots {
       userAgent: '*',
       allow: '/',
     },
-    sitemap: 'https://juriscare.vercel.app/sitemap.xml',
+    sitemap: 'https://www.juriscare.fr/sitemap.xml',
   }
 }

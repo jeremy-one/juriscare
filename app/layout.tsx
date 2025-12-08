@@ -17,7 +17,7 @@ const inter = Inter({
   display: "swap",
 });
 
-const siteUrl = "https://juriscare.vercel.app";
+const siteUrl = "https://www.juriscare.fr";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
