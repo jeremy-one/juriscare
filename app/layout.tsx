@@ -17,9 +17,44 @@ const inter = Inter({
   display: "swap",
 });
 
+const siteUrl = "https://juriscare.vercel.app";
+
 export const metadata: Metadata = {
-  title: "Juriscare - Au service de la médiation",
+  metadataBase: new URL(siteUrl),
+  title: {
+    default: "Juriscare - Au service de la médiation",
+    template: "%s | Juriscare",
+  },
   description: "Nous accompagnons les médiateurs, les entreprises et les justiciables dans une nouvelle ère de la résolution amiable.",
+  alternates: {
+    canonical: "/",
+  },
+  openGraph: {
+    type: "website",
+    locale: "fr_FR",
+    url: siteUrl,
+    siteName: "Juriscare",
+    title: "Juriscare - Au service de la médiation",
+    description: "Nous accompagnons les médiateurs, les entreprises et les justiciables dans une nouvelle ère de la résolution amiable.",
+    images: [
+      {
+        url: "/juriscare.svg",
+        width: 1200,
+        height: 630,
+        alt: "Juriscare - Au service de la médiation",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Juriscare - Au service de la médiation",
+    description: "Nous accompagnons les médiateurs, les entreprises et les justiciables dans une nouvelle ère de la résolution amiable.",
+    images: ["/juriscare.svg"],
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
 };
 
 export default function RootLayout({
