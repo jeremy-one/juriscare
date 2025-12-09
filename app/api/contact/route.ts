@@ -3,7 +3,7 @@ import { NextResponse } from 'next/server';
 const MAILER_HUB_URL = 'https://mail.bl-nk.io/wp-json/mailer-hub/v2/send';
 const MAILER_HUB_TOKEN = 'XNaoM3JeWOv1dheSGoRXu3XKSahOkAMIzkSmDBJpKKWPSEwi';
 
-// Rate limiting store (en mémoire)
+// Rate limiting store (en memoire)
 const rateLimitStore = new Map<string, { count: number; resetTime: number }>();
 
 // Configuration
@@ -11,16 +11,13 @@ const RATE_LIMIT_MAX = 10;
 const RATE_LIMIT_WINDOW = 60 * 1000; // 1 minute
 const MIN_SUBMIT_TIME_MS = 3000; // 3 secondes minimum
 
-// Patterns suspects
+// Patterns suspects - detection XSS, SQL injection, etc.
 const SUSPICIOUS_PATTERNS = [
-  /(?:https?:\/\/[^\s]+\s*){3,}/gi,
   /<script[\s\S]*?>[\s\S]*?<\/script>/gi,
   /javascript:/gi,
   /on\w+\s*=/gi,
   /(\b(SELECT|INSERT|UPDATE|DELETE|DROP|UNION|ALTER)\b.*\b(FROM|INTO|WHERE|TABLE)\b)/gi,
-  /[\x00-\x08\x0B\x0C\x0E-\x1F]/g,
   /&#x?[0-9a-f]+;/gi,
-  /\x[0-9a-f]{2}/gi,
 ];
 
 interface ContactPayload {
@@ -62,13 +59,11 @@ function containsSuspiciousContent(text: string): { suspicious: boolean; reason?
     if (pattern.test(text)) return { suspicious: true, reason: 'Contenu suspect detecte' };
   }
   const urlCount = (text.match(/https?:\/\/[^\s]+/gi) || []).length;
-  if (urlCount > 2) return { suspicious: true, reason: "Trop d URLs dans le message" };
+  if (urlCount > 2) return { suspicious: true, reason: 'Trop d URLs dans le message' };
   return { suspicious: false };
 }
 
 function sanitizeInput(input: string): string {
-  // On echappe uniquement < et > pour eviter injection HTML/XSS
-  // Les apostrophes et guillemets sont legitimes (ex: "L avocat")
   return input
     .replace(/</g, '&lt;')
     .replace(/>/g, '&gt;')
