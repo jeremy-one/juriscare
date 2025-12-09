@@ -57,6 +57,22 @@ export const metadata: Metadata = {
   },
 };
 
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "Juriscare",
+  "description": "Nous accompagnons les médiateurs, les entreprises et les justiciables dans une nouvelle ère de la résolution amiable.",
+  "url": siteUrl,
+  "logo": `${siteUrl}/juriscare.svg`,
+  "address": {
+    "@type": "PostalAddress",
+    "addressCountry": "FR"
+  },
+  "areaServed": "FR",
+  "serviceType": ["Médiation", "Résolution amiable des conflits"],
+  "priceRange": "$$"
+};
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -64,6 +80,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="fr" className={`${playfair.variable} ${inter.variable}`}>
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+      </head>
       <body className="antialiased font-sans">
         <Header />
         <main>
