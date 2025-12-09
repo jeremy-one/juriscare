@@ -71,9 +71,9 @@ export default function HeroModern({ title, subtitle, cards, image }: HeroModern
                     <div className="w-20 h-20 mb-6 text-white group-hover:text-dark transition-colors">
                       <Icon className="w-full h-full" strokeWidth={0.75} />
                     </div>
-                    <h3 className="text-xl font-serif font-semibold text-white group-hover:text-dark transition-colors leading-snug">
+                    <h2 className="text-xl font-serif font-semibold text-white group-hover:text-dark transition-colors leading-snug">
                       {card.text}
-                    </h3>
+                    </h2>
                   </a>
                 );
               })}

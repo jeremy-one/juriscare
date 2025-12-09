@@ -20,7 +20,7 @@ export default function Footer() {
 
           {/* Navigation */}
           <div>
-            <h3 className="font-semibold text-lg mb-4">Navigation</h3>
+            <p className="font-semibold text-lg mb-4">Navigation</p>
             <ul className="space-y-2">
               <li>
                 <Link href="/" className="text-gray-400 hover:text-white hover:underline transition-colors">
@@ -47,7 +47,7 @@ export default function Footer() {
 
           {/* Informations légales */}
           <div>
-            <h3 className="font-semibold text-lg mb-4">Informations</h3>
+            <p className="font-semibold text-lg mb-4">Informations</p>
             <ul className="space-y-2">
               <li>
                 <a href="https://formation.side-quest.io/conditions-generales-d-utilisation-copie/" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white hover:underline transition-colors">

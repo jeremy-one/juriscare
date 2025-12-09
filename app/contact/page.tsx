@@ -104,7 +104,7 @@ export default function Contact() {
               {status === 'success' ? (
                 <div className="text-center py-12">
                   <div className="text-5xl mb-4">✓</div>
-                  <h3 className="text-2xl font-serif font-semibold text-gray-900 mb-4">Message envoyé !</h3>
+                  <h2 className="text-2xl font-serif font-semibold text-gray-900 mb-4">Message envoyé !</h2>
                   <p className="text-gray-600 mb-6">Merci pour votre message. Nous vous recontacterons rapidement.</p>
                   <Button variant="primary" onClick={() => setStatus('idle')}>
                     Envoyer un autre message
@@ -251,7 +251,7 @@ export default function Contact() {
                 <div className="flex items-start">
                   <div className="text-3xl mr-4">📧</div>
                   <div>
-                    <h3 className="font-serif font-semibold text-lg text-gray-900 mb-2">Email</h3>
+                    <h2 className="font-serif font-semibold text-lg text-gray-900 mb-2">Email</h2>
                     <a href="mailto:contact@juriscare.fr" className="text-primary hover:underline">
                       contact@juriscare.fr
                     </a>
@@ -260,14 +260,14 @@ export default function Contact() {
               </div>
 
               <div className="bg-primary text-white rounded-2xl p-6">
-                <h3 className="font-serif font-semibold text-xl mb-3">Rappel téléphonique</h3>
+                <h2 className="font-serif font-semibold text-xl mb-3">Rappel téléphonique</h2>
                 <p className="mb-0 opacity-90">
                   Cochez la case correspondante dans le formulaire et nous vous contacterons rapidement. Le message devient alors facultatif.
                 </p>
               </div>
 
               <div className="bg-beige-light rounded-2xl p-6">
-                <h3 className="font-serif font-semibold text-lg text-gray-900 mb-3">Réponse rapide</h3>
+                <h2 className="font-serif font-semibold text-lg text-gray-900 mb-3">Réponse rapide</h2>
                 <p className="text-gray-700">
                   Nous nous engageons à vous répondre sous 24h ouvrées maximum.
                 </p>

@@ -341,9 +341,9 @@ export default function MediateursPage() {
                     {formation.category}
                   </span>
                 </div>
-                <h4 className="text-lg font-serif font-semibold text-gray-900 mb-3">
+                <h3 className="text-lg font-serif font-semibold text-gray-900 mb-3">
                   {formation.title}
-                </h4>
+                </h3>
                 <p className="text-gray-600 text-sm leading-relaxed">
                   {formation.description}
                 </p>
